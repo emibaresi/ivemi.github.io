@@ -3,14 +3,14 @@
     "title": "SnapPuzzle",
     "badge": "Puzzle • Relax",
     "desc": "Un puzzle fotografico per la quiete dei dettagli. Ricompone immagini, rallenta il ritmo e trasforma la concentrazione in piacere visivo.",
-    "url": "#",
-    "icon": ""
+    "url": "https://play.google.com/store/apps/details?id=com.ivemi.snappuzzle",
+    "icon": "/ivemi.github.io/images/snap-icon.webp"
   },
   {
     "title": "Verba",
     "badge": "Parole • Logica",
-    "desc": "Un gioco di logica e intuizione: le parole non servono solo a vincere, ma a riflettere. Disponibile in italiano, inglese e latino.",
-    "url": "#",
-    "icon": ""
+    "desc": "Un gioco di logica e intuizione: le parole non servono solo a vincere, ma a riflettere. Disponibile in italiano, inglese e latino. Ogni frase è un piccolo enigma da svelare.",
+    "url": "https://play.google.com/store/apps/details?id=com.ivemi.verba",
+    "icon": "/ivemi.github.io/images/verba-icon.webp"
   }
 ]
