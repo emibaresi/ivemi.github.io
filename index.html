@@ -16,57 +16,45 @@
   <meta property="og:image" content="/images/og-cover.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <!-- Favicon SVG inline (semplice monogramma) -->
   <link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="black"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Roboto, system-ui, -apple-system" font-size="26" fill="white">Iv</text></svg>' />
 
   <style>
-    :root {
-      --bg: #0f0f11;
-      --card: #151519;
-      --text: #e9e9ee;
-      --muted: #b9b9c2;
-      --accent: #c7a869;
-      --accent-2: #8c6a2f;
-      --maxw: 1120px;
-      --radius: 18px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body { margin: 0; font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, system-ui; background: radial-gradient(1200px 800px at 20% -10%, #1a1a1f, #0f0f11 60%); color: var(--text); line-height: 1.6; letter-spacing: 0.2px; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    header { position: sticky; top: 0; z-index: 20; backdrop-filter: saturate(120%) blur(10px); background: rgba(10,10,12,.6); border-bottom: 1px solid rgba(255,255,255,.06); }
-    .nav { margin: 0 auto; max-width: var(--maxw); padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; }
-    .brand { display:flex; align-items:center; gap:10px; font-weight:700; }
-    .brand-badge { width:28px; height:28px; border-radius:9px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display:grid; place-items:center; color:#0c0c0f; font-weight:800; font-size:14px; box-shadow:0 6px 18px rgba(199,168,105,.35); }
-    nav ul { list-style:none; display:flex; gap:16px; margin:0; padding:0; }
-    nav a { color: var(--text); opacity:.9; }
-    nav a:hover { opacity:1; }
-    .menu-btn { display:none; }
-    .container { margin: 0 auto; max-width: var(--maxw); padding: 0 16px; }
-    .hero { padding: 64px 0 36px; }
-    .hero h1 { font-size: clamp(28px, 5vw, 44px); line-height:1.15; margin:10px 0 14px; }
-    .hero p { color: var(--muted); font-size: clamp(16px, 2.6vw, 18px); }
-    .tags { display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
-    .tag { background: rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color: var(--text); padding:6px 10px; border-radius:999px; font-size:13px; }
-    .cta-row { display:flex; gap:10px; margin-top:20px; flex-wrap:wrap; }
-    .btn { display:inline-block; padding:12px 16px; border-radius:12px; font-weight:600; border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.04); color:var(--text); }
-    .btn.primary { background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#0b0b0e; border:none; box-shadow:0 10px 24px rgba(199,168,105,.3); }
-    section { padding:26px 0 8px; }
-    .section-title { font-size:22px; margin:8px 0 12px; }
-    .section-sub { color:var(--muted); margin:0 0 16px; }
-    .grid { display:grid; grid-template-columns: repeat(12,1fr); gap:16px; }
-    .card { grid-column: span 12; background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00)); border:1px solid rgba(255,255,255,.07); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
-    .card h3 { margin:6px 0 6px; font-size:18px; }
-    .card p { margin:0 0 10px; color:var(--muted); }
-    .badge { display:inline-block; padding:4px 8px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); font-size:12px; margin-bottom:8px; }
-    .placeholder { width:72px; height:72px; border-radius:16px; background:#202028; border:1px solid rgba(255,255,255,.08); display:grid; place-items:center; color:var(--muted); font-size:12px; font-weight:600; }
-    .item { display:flex; gap:14px; align-items:center; }
-    .item .links { display:flex; gap:8px; flex-wrap:wrap; }
-    @media (min-width:760px){.card{grid-column:span 6;}}
-    .wide{grid-column:span 12!important;}
-    footer{margin-top:34px; padding:32px 0 48px; color:var(--muted); border-top:1px solid rgba(255,255,255,.08);}
-    @media (max-width:640px){.menu-btn{display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:10px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.03); color:var(--text);}nav ul{display:none; position:absolute; right:16px; top:54px; background:rgba(15,15,18,.98); padding:10px; border-radius:12px; border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow);}nav ul.open{display:flex; flex-direction:column; gap:8px;}}
+    :root { --bg:#0f0f11; --card:#151519; --text:#e9e9ee; --muted:#b9b9c2; --accent:#c7a869; --accent-2:#8c6a2f; --maxw:1120px; --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35); }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:ui-sans-serif,-apple-system,Segoe UI,Roboto,Helvetica,Arial,system-ui;background:radial-gradient(1200px 800px at 20% -10%,#1a1a1f,#0f0f11 60%);color:var(--text);line-height:1.6;letter-spacing:.2px}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    header{position:sticky;top:0;z-index:20;backdrop-filter:saturate(120%) blur(10px);background:rgba(10,10,12,.6);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{margin:0 auto;max-width:var(--maxw);padding:12px 16px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand-badge{width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#0c0c0f;font-weight:800;font-size:14px;box-shadow:0 6px 18px rgba(199,168,105,.35)}
+    nav ul{list-style:none;display:flex;gap:16px;margin:0;padding:0} nav a{color:var(--text);opacity:.9} nav a:hover{opacity:1}
+    .menu-btn{display:none}
+    .container{margin:0 auto;max-width:var(--maxw);padding:0 16px}
+    .hero{padding:64px 0 36px}
+    .hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:10px 0 14px}
+    .hero p{color:var(--muted);font-size:clamp(16px,2.6vw,18px)}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+    .tag{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:var(--text);padding:6px 10px;border-radius:999px;font-size:13px}
+    .cta-row{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 16px;border-radius:12px;font-weight:600;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:var(--text)}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0b0b0e;border:none;box-shadow:0 10px 24px rgba(199,168,105,.3)}
+    section{padding:26px 0 8px}
+    .section-title{font-size:22px;margin:8px 0 12px}
+    .section-sub{color:var(--muted);margin:0 0 16px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{grid-column:span 12;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00));border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:6px 0 6px;font-size:18px}
+    .card p{margin:0 0 10px;color:var(--muted)}
+    .badge{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);font-size:12px;margin-bottom:8px}
+    .placeholder{width:72px;height:72px;border-radius:16px;background:#202028;border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;color:var(--muted);font-size:12px;font-weight:600}
+    .item{display:flex;gap:14px;align-items:center}
+    .item .links{display:flex;gap:8px;flex-wrap:wrap}
+    @media (min-width:760px){.card{grid-column:span 6}}
+    .wide{grid-column:span 12!important}
+    footer{margin-top:34px;padding:32px 0 48px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)}
+    @media (max-width:640px){.menu-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);color:var(--text)} nav ul{display:none;position:absolute;right:16px;top:54px;background:rgba(15,15,18,.98);padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)} nav ul.open{display:flex;flex-direction:column;gap:8px}}
   </style>
 </head>
 <body>
@@ -85,56 +73,110 @@
   </div>
 </header>
 <main id="top">
-<section class="hero container">
-  <span class="tag">Parole, idee, giochi</span>
-  <h1>IvEmi — lo spazio autoriale di Gemini</h1>
-  <p>Scrivo, progetto, creo esperienze digitali. IvEmi è dove tutto converge: libri, app e idee nate per chi cerca un senso nel fare, e una quiete nel pensare. Ogni progetto — che sia una pagina o un gioco — è un modo per esplorare la presenza.</p>
-  <div class="tags"><span class="tag">Scrittura</span><span class="tag">Giochi</span><span class="tag">Presenza</span></div>
-  <div class="cta-row"><a class="btn primary" href="#apps">Esplora le App</a><a class="btn" href="#books">Scopri i Libri</a><a class="btn" href="#about">Chi è Gemini</a></div>
-</section>
-<section id="apps"
+  <section class="hero container">
+    <span class="tag">Parole, idee, giochi</span>
+    <h1>IvEmi — lo spazio autoriale di Gemini</h1>
+    <p>Scrivo, progetto, creo esperienze digitali. IvEmi è dove tutto converge: libri, app e idee nate per chi cerca un senso nel fare, e una quiete nel pensare. Ogni progetto — che sia una pagina o un gioco — è un modo per esplorare la presenza.</p>
+    <div class="tags"><span class="tag">Scrittura</span><span class="tag">Giochi</span><span class="tag">Presenza</span></div>
+    <div class="cta-row"><a class="btn primary" href="#apps">Esplora le App</a><a class="btn" href="#books">Scopri i Libri</a><a class="btn" href="#about">Chi è Gemini</a></div>
+  </section>
 
+  <!-- Apps (dinamiche) -->
+  <section id="apps" class="container" aria-labelledby="apps-title">
+    <h2 id="apps-title" class="section-title">Le applicazioni</h2>
+    <p class="section-sub">Giochi semplici, con un’anima: per pensare, osservare, rallentare.</p>
+    <div id="apps-grid" class="grid" aria-live="polite"></div>
+  </section>
+
+  <!-- Books (dinamici) -->
+  <section id="books" class="container" aria-labelledby="books-title">
+    <h2 id="books-title" class="section-title">I libri</h2>
+    <p class="section-sub">Le parole sono il primo luogo dove ho imparato a creare mondi. Scrivo per capire, e per restare.</p>
+    <div id="books-grid" class="grid" aria-live="polite"></div>
+    <p class="section-sub" style="margin-top:10px">Altri titoli saranno aggiunti in seguito.</p>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="container">
+    <h2 class="section-title">Chi è Gemini</h2>
+    <div class="grid"><article class="card wide"><p>Gemini è la voce autoriale di IvEmi. Un autore, uno sviluppatore, un osservatore del tempo contemporaneo. I progetti — tra letteratura e tecnologia — nascono da un’idea semplice: rendere ogni istante un’occasione per comprendere e creare.</p><blockquote style="margin:12px 0 0; padding-left:14px; border-left:2px solid rgba(255,255,255,.2); color:var(--muted)">«Ogni forma è un modo per dire: ho visto.»</blockquote></article></div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container">
+    <h2 class="section-title">Contatti</h2>
+    <div class="grid"><article class="card wide"><p>Per collaborazioni, stampa o domande: <a href="mailto:contatto.ivemi@gmail.com">contatto.ivemi@gmail.com</a></p><p>Privacy & note legali: <a href="https://sites.google.com/view/ivemi-privacy" target="_blank" rel="noopener">pagina dedicata</a></p></article></div>
+  </section>
+</main>
+
+<footer>
+  <div class="container"><div style="display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap"><p>© <span id="year"></span> IvEmi — Tutti i diritti riservati.</p><a class="btn" href="#top">Torna su</a></div></div>
+</footer>
+
+<!-- Script: anno nel footer -->
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<!-- Script: carica App e Libri da JSON (percorsi relativi per sottopercorso /ivemi.github.io/) -->
 <script>
 (async () => {
-  const grid = document.getElementById('books-grid');
+  // Apps
   try {
-    const res = await fetch('/ivemi.github.io/data/books.json', { cache: 'no-store' });
-    const books = await res.json();
-
-    if (!Array.isArray(books) || books.length === 0) {
-      grid.innerHTML = '<p class="section-sub">Nessun libro disponibile al momento.</p>';
-      return;
-    }
-
-    grid.innerHTML = books.map(b => {
-      const cover = b.cover && b.cover.trim()
-        ? `<img src=\"${b.cover}\" alt=\"Copertina di ${b.title}\" style=\"width:72px;height:72px;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:#202028\" />`
-        : `<div class=\"placeholder\" aria-hidden=\"true\">Copertina</div>`;
-
-      const urlBtn = b.url && b.url.trim()
-        ? `<a class=\"btn\" href=\"${b.url}\" target=\"_blank\" rel=\"noopener\">Scopri su Amazon</a>`
-        : `<span class=\"badge\" title=\"Link non disponibile\">In arrivo</span>`;
-
+    const appsRes = await fetch('/ivemi.github.io/data/apps.json', { cache: 'no-store' });
+    const apps = await appsRes.json();
+    const appsGrid = document.getElementById('apps-grid');
+    appsGrid.innerHTML = (Array.isArray(apps) ? apps : []).map(a => {
+      const icon = a.icon && a.icon.trim()
+        ? `<img src="${a.icon}" alt="Icona di ${a.title}" style="width:72px;height:72px;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:#202028" />`
+        : `<div class="placeholder" aria-hidden="true">Icona</div>`;
+      const urlBtn = a.url && a.url.trim()
+        ? `<a class="btn" href="${a.url}" target="_blank" rel="noopener">Scarica su Google Play</a>`
+        : `<span class="badge" title="Link non disponibile">In arrivo</span>`;
       return `
-        <article class=\"card\">
-          <div class=\"item\">
-            ${cover}
+        <article class="card">
+          <div class="item">
+            ${icon}
             <div>
-              <span class=\"badge\">${b.badge || ''}</span>
-              <h3>${b.title || ''}</h3>
-              <p>${b.desc || ''}</p>
-              <div class=\"links\">${urlBtn}</div>
+              <span class="badge">${a.badge || ''}</span>
+              <h3>${a.title || ''}</h3>
+              <p>${a.desc || ''}</p>
+              <div class="links">${urlBtn}</div>
             </div>
           </div>
         </article>`;
     }).join('');
   } catch (e) {
-    grid.innerHTML = '<p class="section-sub">Impossibile caricare i libri. Riprova più tardi.</p>';
+    document.getElementById('apps-grid').innerHTML = '<p class="section-sub">Impossibile caricare le app.</p>';
+  }
+
+  // Books
+  try {
+    const booksRes = await fetch('/ivemi.github.io/data/books.json', { cache: 'no-store' });
+    const books = await booksRes.json();
+    const booksGrid = document.getElementById('books-grid');
+    booksGrid.innerHTML = (Array.isArray(books) ? books : []).map(b => {
+      const cover = b.cover && b.cover.trim()
+        ? `<img src="${b.cover}" alt="Copertina di ${b.title}" style="width:72px;height:72px;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:#202028" />`
+        : `<div class="placeholder" aria-hidden="true">Copertina</div>`;
+      const urlBtn = b.url && b.url.trim()
+        ? `<a class="btn" href="${b.url}" target="_blank" rel="noopener">Scopri su Amazon</a>`
+        : `<span class="badge" title="Link non disponibile">In arrivo</span>`;
+      return `
+        <article class="card">
+          <div class="item">
+            ${cover}
+            <div>
+              <span class="badge">${b.badge || ''}</span>
+              <h3>${b.title || ''}</h3>
+              <p>${b.desc || ''}</p>
+              <div class="links">${urlBtn}</div>
+            </div>
+          </div>
+        </article>`;
+    }).join('');
+  } catch (e) {
+    document.getElementById('books-grid').innerHTML = '<p class="section-sub">Impossibile caricare i libri.</p>';
   }
 })();
 </script>
-</main>
-<footer><div class="container"><div style="display:flex; align-items:center; gap:10px; justify-content:space-between; flex-wrap:wrap;"><p>© <span id="year"></span> IvEmi — Tutti i diritti riservati.</p><a class="btn" href="#top">Torna su</a></div></div></footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
