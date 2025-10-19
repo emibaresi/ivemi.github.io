@@ -6,13 +6,17 @@
   <title>IvEmi — Parole, idee, giochi</title>
   <meta name="description" content="IvEmi è lo spazio autoriale di Gemini: libri, app e progetti tra scrittura e gioco. Parole, idee, giochi." />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://ivemi.github.io/" />
+
+  <!-- ✅ Dominio canonico aggiornato -->
+  <link rel="canonical" href="https://ivemi.it/" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="IvEmi — Parole, idee, giochi" />
   <meta property="og:description" content="Lo spazio autoriale di Gemini: libri, app e progetti tra scrittura e gioco." />
-  <meta property="og:url" content="https://ivemi.github.io/" />
+  <!-- ✅ URL OG aggiornato -->
+  <meta property="og:url" content="https://ivemi.it/" />
+  <!-- Se /images/og-cover.jpg è nella root va bene così; altrimenti metti il percorso corretto -->
   <meta property="og:image" content="/images/og-cover.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -116,12 +120,20 @@
 <!-- Script: anno nel footer -->
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 
-<!-- Script: carica App e Libri da JSON (percorsi relativi per sottopercorso /ivemi.github.io/) -->
+<!-- ✅ Redirect www -> dominio principale (opzionale ma consigliato) -->
+<script>
+  if (location.hostname === 'www.ivemi.it') {
+    location.replace('https://ivemi.it' + location.pathname + location.search + location.hash);
+  }
+</script>
+
+<!-- Script: carica App e Libri da JSON -->
 <script>
 (async () => {
   // Apps
   try {
-    const appsRes  = await fetch('data/apps.json',  { cache: 'no-store' });
+    const appsRes  = await fetch('data/apps.json', { cache: 'no-store' });
+    if (!appsRes.ok) throw new Error('apps.json not found');
     const apps = await appsRes.json();
     const appsGrid = document.getElementById('apps-grid');
     appsGrid.innerHTML = (Array.isArray(apps) ? apps : []).map(a => {
@@ -151,6 +163,7 @@
   // Books
   try {
     const booksRes = await fetch('data/books.json', { cache: 'no-store' });
+    if (!booksRes.ok) throw new Error('books.json not found');
     const books = await booksRes.json();
     const booksGrid = document.getElementById('books-grid');
     booksGrid.innerHTML = (Array.isArray(books) ? books : []).map(b => {
