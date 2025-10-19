@@ -100,96 +100,54 @@
     <article class="card"><div class="item"><div class="placeholder">Icona</div><div><span class="badge">Parole • Logica</span><h3>Verba</h3><p>Un gioco di logica e intuizione: le parole non servono solo a vincere, ma a riflettere. Disponibile in italiano, inglese e latino. Ogni frase è un piccolo enigma da svelare.</p><div class="links"><a class="btn" href="#">Scarica su Google Play</a></div></div></div></article>
   </div>
 </section>
-<section id="books" class="container">
-  <h2 class="section-title">I libri</h2>
+<section id="books" class="container" aria-labelledby="books-title">
+  <h2 id="books-title" class="section-title">I libri</h2>
   <p class="section-sub">Le parole sono il primo luogo dove ho imparato a creare mondi. Scrivo per capire, e per restare.</p>
-  <div class="grid">
-    <!-- La Via dell’Attesa Attiva -->
-    <article class="card">
-      <div class="item">
-        <div class="placeholder" aria-hidden="true">Copertina</div>
-        <div>
-          <span class="badge">Saggio</span>
-          <h3>La Via dell’Attesa Attiva</h3>
-          <p>Una filosofia della presenza nel tempo che cambia. Tra finanza, vita quotidiana e scelte: un metodo per attendere in modo attivo, non passivo.</p>
-          <div class="links">
-            <a class="btn" href="#" target="_blank">Scopri su Amazon</a>
-          </div>
-        </div>
-      </div>
-    </article>
 
-    <!-- Levin Hartwig -->
-    <article class="card">
-      <div class="item">
-        <div class="placeholder" aria-hidden="true">Copertina</div>
-        <div>
-          <span class="badge">Romanzo storico</span>
-          <h3>Levin Hartwig — Obbedì, Lottò, Scelse</h3>
-          <p>Germania, 1944. Un soldato scopre che la battaglia più difficile è dentro di sé: obbedienza, coraggio e scelta.</p>
-          <div class="links">
-            <a class="btn" href="#" target="_blank">Scopri su Amazon</a>
-          </div>
-        </div>
-      </div>
-    </article>
+  <div id="books-grid" class="grid" aria-live="polite"></div>
 
-    <!-- L’Ultimo dei Primi -->
-    <article class="card">
-      <div class="item">
-        <div class="placeholder" aria-hidden="true">Copertina</div>
-        <div>
-          <span class="badge">Fantasia • Mito</span>
-          <h3>L’Ultimo dei Primi</h3>
-          <p>Una parabola fantastica sull’origine e la fine, dove mito e spiritualità si fondono in un viaggio umano e cosmico.</p>
-          <div class="links">
-            <a class="btn" href="#" target="_blank">Scopri su Amazon</a>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Il sapore di Claudia -->
-    <article class="card">
-      <div class="item">
-        <div class="placeholder" aria-hidden="true">Copertina</div>
-        <div>
-          <span class="badge">Narrativa erotica</span>
-          <h3>Il sapore di Claudia</h3>
-          <p>Un romanzo erotico intenso e diretto: la storia di una brillante avvocata che esplora senza filtri il desiderio, il potere e la scoperta di sé. Stile esplicito ma elegante, per una lettura coinvolgente e sensuale.</p>
-          <div class="links">
-            <a class="btn" href="https://www.amazon.it/dp/B0FJ7KD4VJ" target="_blank" rel="noopener">Scopri su Amazon</a>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- L'età dell'algoritmo -->
-    <article class="card">
-      <div class="item">
-        <div class="placeholder" aria-hidden="true">Copertina</div>
-        <div>
-          <span class="badge">Saggio</span>
-          <h3>L'età dell'algoritmo</h3>
-          <p>Paure, rivolte e opportunità di una società che cambia volto. Un saggio lucido sull'intelligenza artificiale, tra scenari distopici e promesse di libertà. Due futuri possibili: la disoccupazione tecnologica o un nuovo tempo umano.</p>
-          <div class="links">
-            <a class="btn" href="https://www.amazon.it/dp/B0FMXRH9WC" target="_blank" rel="noopener">Scopri su Amazon</a>
-          </div>
-        </div>
-      </div>
-    </article>
-
-  </div>
   <p class="section-sub" style="margin-top:10px">Altri titoli saranno aggiunti in seguito.</p>
 </section>
-<section id="about" class="container">
-  <h2 class="section-title">Chi è Gemini</h2>
-  <div class="grid"><article class="card wide"><p>Gemini è la voce autoriale di IvEmi. Un autore, uno sviluppatore, un osservatore del tempo contemporaneo. I progetti — tra letteratura e tecnologia — nascono da un’idea semplice: rendere ogni istante un’occasione per comprendere e creare.</p><blockquote style="margin:12px 0 0; padding-left:14px; border-left:2px solid rgba(255,255,255,.2); color:var(--muted)">«Ogni forma è un modo per dire: ho visto.»</blockquote></article></div>
-</section>
-<section id="contact" class="container">
-  <h2 class="section-title">Contatti</h2>
-  <div class="grid"><article class="card wide"><p>Per collaborazioni, stampa o domande: <a href="mailto:contatto.ivemi@gmail.com">contatto.ivemi@gmail.com</a></p><p>Privacy & note legali: <a href="https://sites.google.com/view/ivemi-privacy" target="_blank">pagina dedicata</a></p></article></div>
-</section>
+
+<script>
+(async () => {
+  const grid = document.getElementById('books-grid');
+  try {
+    const res = await fetch('/ivemi.github.io/data/books.json', { cache: 'no-store' });
+    const books = await res.json();
+
+    if (!Array.isArray(books) || books.length === 0) {
+      grid.innerHTML = '<p class="section-sub">Nessun libro disponibile al momento.</p>';
+      return;
+    }
+
+    grid.innerHTML = books.map(b => {
+      const cover = b.cover && b.cover.trim()
+        ? `<img src=\"${b.cover}\" alt=\"Copertina di ${b.title}\" style=\"width:72px;height:72px;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:#202028\" />`
+        : `<div class=\"placeholder\" aria-hidden=\"true\">Copertina</div>`;
+
+      const urlBtn = b.url && b.url.trim()
+        ? `<a class=\"btn\" href=\"${b.url}\" target=\"_blank\" rel=\"noopener\">Scopri su Amazon</a>`
+        : `<span class=\"badge\" title=\"Link non disponibile\">In arrivo</span>`;
+
+      return `
+        <article class=\"card\">
+          <div class=\"item\">
+            ${cover}
+            <div>
+              <span class=\"badge\">${b.badge || ''}</span>
+              <h3>${b.title || ''}</h3>
+              <p>${b.desc || ''}</p>
+              <div class=\"links\">${urlBtn}</div>
+            </div>
+          </div>
+        </article>`;
+    }).join('');
+  } catch (e) {
+    grid.innerHTML = '<p class="section-sub">Impossibile caricare i libri. Riprova più tardi.</p>';
+  }
+})();
+</script>
 </main>
 <footer><div class="container"><div style="display:flex; align-items:center; gap:10px; justify-content:space-between; flex-wrap:wrap;"><p>© <span id="year"></span> IvEmi — Tutti i diritti riservati.</p><a class="btn" href="#top">Torna su</a></div></div></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
