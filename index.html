@@ -121,7 +121,7 @@
 (async () => {
   // Apps
   try {
-    const appsRes = await fetch('/ivemi.github.io/data/apps.json', { cache: 'no-store' });
+    const appsRes  = await fetch('data/apps.json',  { cache: 'no-store' });
     const apps = await appsRes.json();
     const appsGrid = document.getElementById('apps-grid');
     appsGrid.innerHTML = (Array.isArray(apps) ? apps : []).map(a => {
@@ -150,7 +150,7 @@
 
   // Books
   try {
-    const booksRes = await fetch('/ivemi.github.io/data/books.json', { cache: 'no-store' });
+    const booksRes = await fetch('data/books.json', { cache: 'no-store' });
     const books = await booksRes.json();
     const booksGrid = document.getElementById('books-grid');
     booksGrid.innerHTML = (Array.isArray(books) ? books : []).map(b => {
