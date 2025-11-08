@@ -80,13 +80,12 @@
     .yt-embed{aspect-ratio:16/9;width:100%;height:auto;border-radius:var(--radius);box-shadow:var(--shadow)}
   </style>
 </head>
-
 <body>
 <header>
   <div class="nav">
     <div class="brand"><div class="brand-badge">IE</div><a href="#top">IvEmi</a></div>
     <nav>
-      <button class="menu-btn" onclick="document.querySelector('nav ul').classList.toggle('open')">☰ Menu</button>
+      <button class="menu-btn" aria-label="Apri menu" onclick="document.querySelector('nav ul').classList.toggle('open')">☰ Menu</button>
       <ul>
         <li><a href="#apps">App</a></li>
         <li><a href="#books">Libri</a></li>
@@ -108,31 +107,31 @@
     <div class="cta-row">
       <a class="btn primary" href="#apps">Esplora le App</a>
       <a class="btn" href="#books">Scopri i Libri</a>
-      <a class="btn icon" href="https://youtube.com/@emibaresi?si=-dRrx2M6Ek-qvJw4" target="_blank" rel="noopener">
+      <a class="btn icon" href="https://youtube.com/@emibaresi?si=-dRrx2M6Ek-qvJw4" target="_blank" rel="noopener" aria-label="Apri il canale YouTube di IvEmi">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a4.8 4.8 0 0 0-.8-2.2 3 3 0 0 0-2-.9C18.5 3 12 3 12 3s-6.5 0-8.7.1a3 3 0 0 0-2 .9 4.8 4.8 0 0 0-.8 2.2A36.4 36.4 0 0 0 0 12a36.4 36.4 0 0 0 .5 5.8c.1.8.4 1.5.8 2.2.5.6 1.2 1 2 .9C5.5 21 12 21 12 21s6.5 0 8.7-.1a3 3 0 0 0 2-.9c.4-.7.7-1.4.8-2.2.4-1.9.5-3.9.5-5.8 0-2-.1-4-.5-5.8Zm-14 9.4V8.4l6.2 3.6-6.2 3.6Z"/></svg>
         Guarda su YouTube
       </a>
     </div>
   </section>
 
-  <!-- App -->
-  <section id="apps" class="container">
-    <h2 class="section-title">Le applicazioni</h2>
+  <!-- Apps (dinamiche) -->
+  <section id="apps" class="container" aria-labelledby="apps-title">
+    <h2 id="apps-title" class="section-title">Le applicazioni</h2>
     <p class="section-sub">Giochi semplici, con un’anima: per pensare, osservare, rallentare.</p>
     <div id="apps-grid" class="grid" aria-live="polite"></div>
   </section>
 
-  <!-- Libri -->
-  <section id="books" class="container">
-    <h2 class="section-title">I libri</h2>
+  <!-- Books (dinamici) -->
+  <section id="books" class="container" aria-labelledby="books-title">
+    <h2 id="books-title" class="section-title">I libri</h2>
     <p class="section-sub">Le parole sono il primo luogo dove ho imparato a creare mondi. Scrivo per capire, e per restare.</p>
     <div id="books-grid" class="grid" aria-live="polite"></div>
     <p class="section-sub" style="margin-top:10px">Altri titoli saranno aggiunti in seguito.</p>
   </section>
 
   <!-- 🎥 Video -->
-  <section id="videos" class="container">
-    <h2 class="section-title">Video</h2>
+  <section id="videos" class="container" aria-labelledby="videos-title">
+    <h2 id="videos-title" class="section-title">Video</h2>
     <p class="section-sub">Spiego in modo semplice temi come busta paga, ferie, maternità, bonus e molto altro. Qui trovi la playlist aggiornata dei contenuti principali.</p>
 
     <!-- Playlist incorporata -->
@@ -146,7 +145,7 @@
       referrerpolicy="strict-origin-when-cross-origin"></iframe>
 
     <div class="cta-row" style="margin-top:12px">
-      <a class="btn icon" href="https://youtube.com/@emibaresi?si=-dRrx2M6Ek-qvJw4" target="_blank" rel="noopener">
+      <a class="btn icon" href="https://youtube.com/@emibaresi?si=-dRrx2M6Ek-qvJw4" target="_blank" rel="noopener" aria-label="Apri il canale YouTube di IvEmi">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:18px;height:18px"><path d="M23.5 6.2a4.8 4.8 0 0 0-.8-2.2 3 3 0 0 0-2-.9C18.5 3 12 3 12 3s-6.5 0-8.7.1a3 3 0 0 0-2 .9 4.8 4.8 0 0 0-.8 2.2A36.4 36.4 0 0 0 0 12a36.4 36.4 0 0 0 .5 5.8c.1.8.4 1.5.8 2.2.5.6 1.2 1 2 .9C5.5 21 12 21 12 21s6.5 0 8.7-.1a3 3 0 0 0 2-.9c.4-.7.7-1.4.8-2.2.4-1.9.5-3.9.5-5.8 0-2-.1-4-.5-5.8Zm-14 9.4V8.4l6.2 3.6-6.2 3.6Z"/></svg>
         Guarda tutti i video
       </a>
@@ -156,15 +155,114 @@
   <!-- About -->
   <section id="about" class="container">
     <h2 class="section-title">Chi è Gemini</h2>
-    <div class="grid"><article class="card wide"><p>Gemini è la voce autoriale di IvEmi. Un autore, uno sviluppatore, un osservatore del tempo contemporaneo. I progetti — tra letteratura e tecnologia — nascono da un’idea semplice: rendere ogni istante un’occasione per comprendere e creare.</p><blockquote style="margin:12px 0 0; padding-left:14px; border-left:2px solid rgba(255,255,255,.2); color:var(--muted)">«Ogni forma è un modo per dire: ho visto.»</blockquote></article></div>
+    <div class="grid">
+      <article class="card wide">
+        <p>Gemini è la voce autoriale di IvEmi. Un autore, uno sviluppatore, un osservatore del tempo contemporaneo. I progetti — tra letteratura e tecnologia — nascono da un’idea semplice: rendere ogni istante un’occasione per comprendere e creare.</p>
+        <blockquote style="margin:12px 0 0; padding-left:14px; border-left:2px solid rgba(255,255,255,.2); color:var(--muted)">«Ogni forma è un modo per dire: ho visto.»</blockquote>
+      </article>
+    </div>
   </section>
 
-  <!-- Contatti -->
+  <!-- Contact -->
   <section id="contact" class="container">
     <h2 class="section-title">Contatti</h2>
-    <div class="grid"><article class="card wide"><p>Per collaborazioni, stampa o domande: <a href="mailto:castelloululi@gmail.com">castelloululi@gmail.com</a></p><p>Privacy & note legali: <a href="https://sites.google.com/view/ivemi-privacy" target="_blank" rel="noopener">pagina dedicata</a></p></article></div>
+    <div class="grid">
+      <article class="card wide">
+        <p>Per collaborazioni, stampa o domande: <a href="mailto:castelloululi@gmail.com">castelloululi@gmail.com</a></p>
+        <p>Privacy & note legali: <a href="https://sites.google.com/view/ivemi-privacy" target="_blank" rel="noopener">pagina dedicata</a></p>
+      </article>
+    </div>
   </section>
 </main>
 
 <footer>
-  <div class="container"><div style="display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap"><p>© <span id="year"></span> IvEmi — Tutti i diritti riservati.</p><div class="cta-row" style="margin:0"><a class="btn" href="#top">Torna su</a><a class="btn icon" href="https://youtube.com/@emibaresi?si=-dRrx2M6Ek-qvJw4" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap">
+      <p>© <span id="year"></span> IvEmi — Tutti i diritti riservati.</p>
+      <div class="cta-row" style="margin:0">
+        <a class="btn" href="#top">Torna su</a>
+        <a class="btn icon" href="https://youtube.com/@emibaresi?si=-dRrx2M6Ek-qvJw4" target="_blank" rel="noopener" aria-label="Apri il canale YouTube di IvEmi">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:18px;height:18px"><path d="M23.5 6.2a4.8 4.8 0 0 0-.8-2.2 3 3 0 0 0-2-.9C18.5 3 12 3 12 3s-6.5 0-8.7.1a3 3 0 0 0-2 .9 4.8 4.8 0 0 0-.8 2.2A36.4 36.4 0 0 0 0 12a36.4 36.4 0 0 0 .5 5.8c.1.8.4 1.5.8 2.2.5.6 1.2 1 2 .9C5.5 21 12 21 12 21s6.5 0 8.7-.1a3 3 0 0 0 2-.9c.4-.7.7-1.4.8-2.2.4-1.9.5-3.9.5-5.8 0-2-.1-4-.5-5.8Zm-14 9.4V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+          YouTube
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Script: anno nel footer -->
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<!-- ✅ Redirect www -> dominio principale -->
+<script>
+  if (location.hostname === 'www.ivemi.it') {
+    location.replace('https://ivemi.it' + location.pathname + location.search + location.hash);
+  }
+</script>
+
+<!-- Script: carica App e Libri da JSON -->
+<script>
+(async () => {
+  // Apps
+  try {
+    const appsRes  = await fetch('data/apps.json', { cache: 'no-store' });
+    if (!appsRes.ok) throw new Error('apps.json not found');
+    const apps = await appsRes.json();
+    const appsGrid = document.getElementById('apps-grid');
+    appsGrid.innerHTML = (Array.isArray(apps) ? apps : []).map(a => {
+      const icon = a.icon && a.icon.trim()
+        ? `<img src="${a.icon}" alt="Icona di ${a.title}" style="width:72px;height:72px;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:#202028" />`
+        : `<div class="placeholder" aria-hidden="true">Icona</div>`;
+      const urlBtn = a.url && a.url.trim()
+        ? `<a class="btn" href="${a.url}" target="_blank" rel="noopener">Scarica su Google Play</a>`
+        : `<span class="badge" title="Link non disponibile">In arrivo</span>`;
+      return `
+        <article class="card">
+          <div class="item">
+            ${icon}
+            <div>
+              <span class="badge">${a.badge || ''}</span>
+              <h3>${a.title || ''}</h3>
+              <p>${a.desc || ''}</p>
+              <div class="links">${urlBtn}</div>
+            </div>
+          </div>
+        </article>`;
+    }).join('');
+  } catch (e) {
+    document.getElementById('apps-grid').innerHTML = '<p class="section-sub">Impossibile caricare le app.</p>';
+  }
+
+  // Books
+  try {
+    const booksRes = await fetch('data/books.json', { cache: 'no-store' });
+    if (!booksRes.ok) throw new Error('books.json not found');
+    const books = await booksRes.json();
+    const booksGrid = document.getElementById('books-grid');
+    booksGrid.innerHTML = (Array.isArray(books) ? books : []).map(b => {
+      const cover = b.cover && b.cover.trim()
+        ? `<img src="${b.cover}" alt="Copertina di ${b.title}" style="width:72px;height:72px;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:#202028" />`
+        : `<div class="placeholder" aria-hidden="true">Copertina</div>`;
+      const urlBtn = b.url && b.url.trim()
+        ? `<a class="btn" href="${b.url}" target="_blank" rel="noopener">Scopri su Amazon</a>`
+        : `<span class="badge" title="Link non disponibile">In arrivo</span>`;
+      return `
+        <article class="card">
+          <div class="item">
+            ${cover}
+            <div>
+              <span class="badge">${b.badge || ''}</span>
+              <h3>${b.title || ''}</h3>
+              <p>${b.desc || ''}</p>
+              <div class="links">${urlBtn}</div>
+            </div>
+          </div>
+        </article>`;
+    }).join('');
+  } catch (e) {
+    document.getElementById('books-grid').innerHTML = '<p class="section-sub">Impossibile caricare i libri.</p>';
+  }
+})();
+</script>
+</body>
+</html>
