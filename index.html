@@ -67,7 +67,6 @@
     .badge{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);font-size:12px;margin-bottom:8px}
     .placeholder{width:72px;height:72px;border-radius:16px;background:#202028;border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;color:var(--muted);font-size:12px;font-weight:600}
     .item{display:flex;gap:14px;align-items:center}
-    .item .links{display:flex;gap:8px;flex-wrap:wrap}
     @media (min-width:760px){.card{grid-column:span 6}}
     .wide{grid-column:span 12!important}
     footer{margin-top:34px;padding:32px 0 48px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)}
@@ -78,6 +77,14 @@
     }
     /* 🎥 Embed YouTube responsivo */
     .yt-embed{aspect-ratio:16/9;width:100%;height:auto;border-radius:var(--radius);box-shadow:var(--shadow)}
+
+    /* ▶️ Thumb video per i libri */
+    .thumb{position:relative;display:inline-block;width:72px;height:72px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#202028}
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .play-badge{position:absolute;inset:auto;left:50%;top:50%;transform:translate(-50%,-50%);width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.55);display:grid;place-items:center}
+    .play-badge svg{width:16px;height:16px;fill:white}
+    .thumb:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    .links{display:flex;gap:8px;flex-wrap:wrap}
   </style>
 </head>
 <body>
@@ -240,12 +247,31 @@
     const books = await booksRes.json();
     const booksGrid = document.getElementById('books-grid');
     booksGrid.innerHTML = (Array.isArray(books) ? books : []).map(b => {
-      const cover = b.cover && b.cover.trim()
-        ? `<img src="${b.cover}" alt="Copertina di ${b.title}" style="width:72px;height:72px;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:#202028" />`
+      const coverImg = b.cover && b.cover.trim()
+        ? `<img src="${b.cover}" alt="Copertina di ${b.title}">`
         : `<div class="placeholder" aria-hidden="true">Copertina</div>`;
-      const urlBtn = b.url && b.url.trim()
+
+      // Se esiste b.video, rendi la cover cliccabile con badge "play"
+      const cover = b.video && b.video.trim()
+        ? `<a class="thumb" href="${b.video}" target="_blank" rel="noopener" aria-label="Guarda l'intervista su YouTube">
+             ${coverImg}
+             <span class="play-badge" aria-hidden="true">
+               <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+             </span>
+           </a>`
+        : `<div class="thumb" aria-hidden="false">${coverImg}</div>`;
+
+      const amazonBtn = b.url && b.url.trim()
         ? `<a class="btn" href="${b.url}" target="_blank" rel="noopener">Scopri su Amazon</a>`
         : `<span class="badge" title="Link non disponibile">In arrivo</span>`;
+
+      const videoBtn = b.video && b.video.trim()
+        ? `<a class="btn icon" href="${b.video}" target="_blank" rel="noopener" aria-label="Guarda l'intervista su YouTube">
+             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:18px;height:18px"><path d="M23.5 6.2a4.8 4.8 0 0 0-.8-2.2 3 3 0 0 0-2-.9C18.5 3 12 3 12 3s-6.5 0-8.7.1a3 3 0 0 0-2 .9 4.8 4.8 0 0 0-.8 2.2A36.4 36.4 0 0 0 0 12a36.4 36.4 0 0 0 .5 5.8c.1.8.4 1.5.8 2.2.5.6 1.2 1 2 .9C5.5 21 12 21 12 21s6.5 0 8.7-.1a3 3 0 0 0 2-.9c.4-.7.7-1.4.8-2.2.4-1.9.5-3.9.5-5.8 0-2-.1-4-.5-5.8Zm-14 9.4V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+             Guarda l'intervista
+           </a>`
+        : '';
+
       return `
         <article class="card">
           <div class="item">
@@ -254,7 +280,7 @@
               <span class="badge">${b.badge || ''}</span>
               <h3>${b.title || ''}</h3>
               <p>${b.desc || ''}</p>
-              <div class="links">${urlBtn}</div>
+              <div class="links">${amazonBtn}${videoBtn ? ' ' + videoBtn : ''}</div>
             </div>
           </div>
         </article>`;
