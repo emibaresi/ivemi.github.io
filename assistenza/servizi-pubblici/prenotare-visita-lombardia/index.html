@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prenotare una visita — Regione Lombardia</title>
+  <meta name="description" content="Guida pratica per prenotare una visita sul portale della Regione Lombardia (pensata anche per chi aiuta qualcun altro)." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://ivemi.it/assistenza/servizi-pubblici/prenotare-visita-lombardia/" />
+  <link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="brand"><div class="brand-badge">IE</div><a href="/">IvEmi</a></div>
+    <nav>
+      <button class="menu-btn" aria-label="Apri menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰ Menu</button>
+      <ul id="navLinks">
+        <li><a href="/assistenza/">Assistenza</a></li>
+        <li><a href="/#apps">App</a></li>
+        <li><a href="/#books">Libri</a></li>
+        <li><a href="/#videos">Video</a></li>
+        <li><a href="/#about">Chi sono</a></li>
+        <li><a href="/#contact">Contatti</a></li>
+        <li><a href="https://youtube.com/@emibaresi?si=-dRrx2M6Ek-qvJw4" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="breadcrumb">
+      <a href="/">Home</a> › <a href="/assistenza/">Assistenza</a> › <a href="/assistenza/servizi-pubblici/">Servizi pubblici</a> › Prenotare visita
+    </div>
+    <span class="tag">Guida</span>
+    <h1>Prenotare una visita — Regione Lombardia</h1>
+    <p>Guida pratica pensata per chi prenota per sé, o per chi sta aiutando un genitore / un cliente / un amico.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Prima di iniziare</h2>
+    <div class="card wide">
+      <ul class="list">
+        <li>Hai SPID o CIE pronti?</li>
+        <li>Hai impegnativa / ricetta (se richiesta)?</li>
+        <li>Hai a portata tessera sanitaria e dati anagrafici?</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Percorso guidato</h2>
+    <div class="grid">
+      <article class="card wide"><span class="badge">Step 1</span><h3>Entrare nel portale ufficiale</h3><p>Link ufficiale + come riconoscere che sei nel posto giusto.</p></article>
+      <article class="card wide"><span class="badge">Step 2</span><h3>Accesso con SPID/CIE</h3><p>Cosa fare se l’accesso non va al primo colpo.</p></article>
+      <article class="card wide"><span class="badge">Step 3</span><h3>Ricerca prestazione, struttura e data</h3><p>Passaggi ordinati per non perdersi tra filtri e opzioni.</p></article>
+      <article class="card wide"><span class="badge">Step 4</span><h3>Conferma e promemoria</h3><p>Promemoria, email, e cosa controllare subito dopo.</p></article>
+    </div>
+  </section>
+
+  <hr class="hr" />
+  <div class="note"><p style="margin:0">IvEmi non è un sito istituzionale e non gestisce dati sanitari. Ti accompagniamo fino ai portali ufficiali.</p></div>
+</main>
+
+<footer>
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap">
+      <p>© <span id="year"></span> IvEmi — Tutti i diritti riservati.</p>
+      <div class="cta-row" style="margin:0">
+        <a class="btn" href="/assistenza/servizi-pubblici/">Indietro</a>
+        <a class="btn" href="/assistenza/">Assistenza</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  if (location.hostname === 'www.ivemi.it') {
+    location.replace('https://ivemi.it' + location.pathname + location.search + location.hash);
+  }
+</script>
+</body>
+</html>
