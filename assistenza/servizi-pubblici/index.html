@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Servizi pubblici — Assistenza</title>
+  <meta name="description" content="SPID, CIE e prenotazioni sanitarie: guide pratiche passo per passo." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://ivemi.it/assistenza/servizi-pubblici/" />
+  <link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="brand-badge">IE</div>
+      <a href="/">IvEmi</a>
+    </div>
+    <nav>
+      <button class="menu-btn" aria-label="Apri menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰ Menu</button>
+      <ul id="navLinks">
+        <li><a href="/assistenza/">Assistenza</a></li>
+        <li><a href="/#apps">App</a></li>
+        <li><a href="/#books">Libri</a></li>
+        <li><a href="/#videos">Video</a></li>
+        <li><a href="/#about">Chi sono</a></li>
+        <li><a href="/#contact">Contatti</a></li>
+        <li><a href="https://youtube.com/@emibaresi?si=-dRrx2M6Ek-qvJw4" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/assistenza/">Assistenza</a> › Servizi pubblici</div>
+    <span class="tag">Area</span>
+    <h1>Servizi pubblici & identità digitale</h1>
+    <p>Le tre cose iniziali, fatte bene: SPID, CIE e prenotazione di una visita (Regione Lombardia).</p>
+  </section>
+
+  <section aria-labelledby="guide-title">
+    <h2 id="guide-title" class="section-title">Guide disponibili</h2>
+    <p class="section-sub">Ogni guida segue lo stesso metodo: cosa serve → passi → errori comuni → link ufficiali.</p>
+
+    <div class="grid">
+      <article class="card">
+        <span class="badge">Guida</span>
+        <h3>Attivare lo SPID</h3>
+        <p>Cos’è, a cosa serve e come attivarlo con un percorso semplice.</p>
+        <div class="links">
+          <a class="btn primary" href="/assistenza/servizi-pubblici/spid/">Apri guida</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="badge">Guida</span>
+        <h3>Usare la CIE (Carta d’identità elettronica)</h3>
+        <p>Quando serve, cosa ti serve davvero e come iniziare.</p>
+        <div class="links">
+          <a class="btn primary" href="/assistenza/servizi-pubblici/cie/">Apri guida</a>
+        </div>
+      </article>
+
+      <article class="card wide">
+        <span class="badge">Guida</span>
+        <h3>Prenotare una visita — Regione Lombardia</h3>
+        <p>Percorso guidato per chi aiuta un genitore, un cliente o un amico a prenotare online.</p>
+        <div class="links">
+          <a class="btn primary" href="/assistenza/servizi-pubblici/prenotare-visita-lombardia/">Apri guida</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="note">
+      <p style="margin:0">
+        Nota: in queste guide non inseriremo mai schermate di login “farlocche” o form per credenziali. Ti accompagniamo fino al portale ufficiale.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap">
+      <p>© <span id="year"></span> IvEmi — Tutti i diritti riservati.</p>
+      <div class="cta-row" style="margin:0">
+        <a class="btn" href="/assistenza/">Assistenza</a>
+        <a class="btn" href="/">Home</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  if (location.hostname === 'www.ivemi.it') {
+    location.replace('https://ivemi.it' + location.pathname + location.search + location.hash);
+  }
+</script>
+</body>
+</html>
