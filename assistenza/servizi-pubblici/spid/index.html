@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Attivare lo SPID — Assistenza</title>
+  <meta name="description" content="Guida pratica: cos’è lo SPID, a cosa serve e come attivarlo passo per passo." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://ivemi.it/assistenza/servizi-pubblici/spid/" />
+  <link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="brand"><div class="brand-badge">IE</div><a href="/">IvEmi</a></div>
+    <nav>
+      <button class="menu-btn" aria-label="Apri menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰ Menu</button>
+      <ul id="navLinks">
+        <li><a href="/assistenza/">Assistenza</a></li>
+        <li><a href="/#apps">App</a></li>
+        <li><a href="/#books">Libri</a></li>
+        <li><a href="/#videos">Video</a></li>
+        <li><a href="/#about">Chi sono</a></li>
+        <li><a href="/#contact">Contatti</a></li>
+        <li><a href="https://youtube.com/@emibaresi?si=-dRrx2M6Ek-qvJw4" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="breadcrumb">
+      <a href="/">Home</a> › <a href="/assistenza/">Assistenza</a> › <a href="/assistenza/servizi-pubblici/">Servizi pubblici</a> › SPID
+    </div>
+    <span class="tag">Guida</span>
+    <h1>Attivare lo SPID</h1>
+    <p>Qui costruiremo un percorso semplice: cosa serve, quali scelte fare, e dove possono nascere intoppi.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title">In 2 minuti: cosa ottieni</h2>
+    <ul class="list">
+      <li>Capisci cos’è lo SPID e quando ti serve davvero.</li>
+      <li>Prepari i requisiti (documenti, email, telefono).</li>
+      <li>Segui i passi in modo ordinato, senza perderti tra mille pagine.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="section-title">Cosa ti serve</h2>
+    <div class="card wide">
+      <ul class="list">
+        <li>Documento valido (CIE o passaporto)</li>
+        <li>Tessera sanitaria / codice fiscale</li>
+        <li>Email e numero di telefono</li>
+        <li>Smartphone (quasi sempre necessario)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Percorso guidato</h2>
+    <div class="grid">
+      <article class="card wide"><span class="badge">Step 1</span><h3>Scegliere il gestore</h3><p>Qui inseriremo criteri chiari (costo, riconoscimento, app, tempi).</p></article>
+      <article class="card wide"><span class="badge">Step 2</span><h3>Registrazione e riconoscimento</h3><p>Qui spiegheremo le opzioni e quali sono le più semplici.</p></article>
+      <article class="card wide"><span class="badge">Step 3</span><h3>Primo accesso e test</h3><p>Verifica finale, recupero credenziali e cosa fare se non entra.</p></article>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Video utili (selezionati)</h2>
+    <div class="note"><p style="margin:0">Qui inseriremo 2–3 video con credito autore + link a YouTube (senza re-host).</p></div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Errori comuni</h2>
+    <div class="card wide">
+      <ul class="list">
+        <li>Numero di telefono già associato a un altro SPID</li>
+        <li>Email non accessibile / password persa</li>
+        <li>App di autenticazione non configurata</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="hr" />
+  <div class="note"><p style="margin:0">IvEmi non raccoglie credenziali. Ti accompagniamo fino ai siti ufficiali. Le schermate possono cambiare.</p></div>
+</main>
+
+<footer>
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap">
+      <p>© <span id="year"></span> IvEmi — Tutti i diritti riservati.</p>
+      <div class="cta-row" style="margin:0">
+        <a class="btn" href="/assistenza/servizi-pubblici/">Indietro</a>
+        <a class="btn" href="/assistenza/">Assistenza</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  if (location.hostname === 'www.ivemi.it') {
+    location.replace('https://ivemi.it' + location.pathname + location.search + location.hash);
+  }
+</script>
+</body>
+</html>
