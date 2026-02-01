@@ -3,12 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Usare la CIE — Assistenza</title>
-  <meta name="description" content="Guida pratica: a cosa serve la CIE e come usarla online." />
+  <title>Guida pratica alla CIE — IvEmi</title>
+  <meta name="description" content="Guida pratica alla CIE (Carta d’identità elettronica): a cosa serve, cosa ti serve e come usarla online con l’app CieID. Utile anche se stai aiutando qualcun altro." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://ivemi.it/assistenza/servizi-pubblici/cie/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Guida pratica alla CIE — IvEmi" />
+  <meta property="og:description" content="Passo per passo: PIN/PUK, app CieID, NFC e soluzioni rapide se non funziona." />
+  <meta property="og:url" content="https://ivemi.it/assistenza/servizi-pubblici/cie/" />
+  <meta property="og:image" content="/images/og-cover.jpg" />
+
   <link rel="stylesheet" href="/assets/site.css" />
 </head>
+
 <body>
 <header>
   <div class="nav">
@@ -16,7 +24,7 @@
     <nav>
       <button class="menu-btn" aria-label="Apri menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰ Menu</button>
       <ul id="navLinks">
-        <li><a href="/assistenza/">Assistenza</a></li>
+        <li><a href="/assistenza/">Guide pratiche</a></li>
         <li><a href="/#apps">App</a></li>
         <li><a href="/#books">Libri</a></li>
         <li><a href="/#videos">Video</a></li>
@@ -31,35 +39,155 @@
 <main class="container">
   <section class="hero">
     <div class="breadcrumb">
-      <a href="/">Home</a> › <a href="/assistenza/">Assistenza</a> › <a href="/assistenza/servizi-pubblici/">Servizi pubblici</a> › CIE
+      <a href="/">Home</a> ›
+      <a href="/assistenza/">Guide pratiche</a> ›
+      <a href="/assistenza/servizi-pubblici/">Servizi pubblici</a> ›
+      CIE
     </div>
+
     <span class="tag">Guida</span>
-    <h1>Usare la CIE (Carta d’identità elettronica)</h1>
-    <p>Quando conviene usarla, cosa serve e come evitare i blocchi più comuni.</p>
+    <h1>Guida pratica alla CIE</h1>
+    <p class="section-sub">Carta d’identità elettronica: quando conviene usarla, cosa serve e come evitare i blocchi più comuni.</p>
+
+    <div class="cta-row">
+      <a class="btn primary" href="https://www.cartaidentita.interno.gov.it/" target="_blank" rel="noopener">Sito ufficiale CIE</a>
+      <a class="btn" href="/assistenza/servizi-pubblici/">Indietro</a>
+    </div>
   </section>
 
-  <section>
-    <h2 class="section-title">Cosa ti serve</h2>
+  <section aria-labelledby="quick-title">
+    <h2 id="quick-title" class="section-title">In 2 minuti: cosa ottieni</h2>
     <div class="card wide">
       <ul class="list">
-        <li>Carta d’identità elettronica</li>
-        <li>PIN / PUK della CIE</li>
-        <li>Smartphone compatibile (NFC, quando richiesto)</li>
+        <li>Capisci quando usare la CIE al posto dello SPID (o insieme).</li>
+        <li>Prepari PIN/PUK e l’app corretta prima di iniziare.</li>
+        <li>Imposti l’accesso con CIE e fai un test di login.</li>
+        <li>Hai un piano B se qualcosa non funziona (NFC, PIN bloccato, telefono non compatibile).</li>
       </ul>
     </div>
   </section>
 
-  <section>
-    <h2 class="section-title">Percorso guidato</h2>
+  <section aria-labelledby="what-title">
+    <h2 id="what-title" class="section-title">Cos’è “Entra con CIE” (in parole semplici)</h2>
+    <div class="card wide">
+      <p>
+        La <strong>CIE</strong> (Carta d’identità elettronica) può essere usata per accedere ai servizi online
+        quando trovi il pulsante <strong>“Entra con CIE”</strong>.
+        È un accesso garantito dallo Stato e spesso richiede una conferma tramite app (e, in alcuni casi, NFC).
+      </p>
+      <div class="links">
+        <a class="btn" href="https://www.cartaidentita.interno.gov.it/info-utili/entra-con-cie/" target="_blank" rel="noopener">Info ufficiali “Entra con CIE”</a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="need-title">
+    <h2 id="need-title" class="section-title">Cosa ti serve</h2>
+    <div class="card wide">
+      <ul class="list">
+        <li><strong>Carta d’identità elettronica</strong> (fisica)</li>
+        <li><strong>PIN</strong> della CIE (tutte le cifre)</li>
+        <li><strong>PUK</strong> della CIE (serve per sblocco se sbagli PIN troppe volte)</li>
+        <li><strong>Smartphone compatibile</strong> (spesso con NFC, a seconda della modalità)</li>
+        <li><strong>App CieID</strong> (ufficiale)</li>
+      </ul>
+      <div class="note" style="margin-top:12px">
+        <p style="margin:0">
+          Suggerimento pratico: tieni PIN/PUK in un posto sicuro. Se stai aiutando qualcuno, chiedi di recuperarli prima:
+          senza PIN spesso ci si blocca a metà.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="steps-title">
+    <h2 id="steps-title" class="section-title">Percorso guidato</h2>
+
     <div class="grid">
-      <article class="card wide"><span class="badge">Step 1</span><h3>Preparazione</h3><p>App, PIN e requisiti minimi.</p></article>
-      <article class="card wide"><span class="badge">Step 2</span><h3>Primo accesso</h3><p>Login e verifica del metodo CIE.</p></article>
-      <article class="card wide"><span class="badge">Step 3</span><h3>Se non funziona</h3><p>Alternative pratiche prima di mollare.</p></article>
+      <article class="card wide">
+        <span class="badge">Step 1</span>
+        <h3>Recupera PIN e PUK (prima di tutto)</h3>
+        <p>
+          Per usare la CIE online servono i codici. In genere arrivano in due parti (una al momento della richiesta e una con la consegna).
+          Se non li trovi, puoi consultare le istruzioni ufficiali e le opzioni di recupero previste.
+        </p>
+        <div class="links">
+          <a class="btn" href="https://www.cartaidentita.interno.gov.it/assistenza/" target="_blank" rel="noopener">Assistenza ufficiale CIE (FAQ)</a>
+          <a class="btn" href="https://www.cartaidentita.interno.gov.it/info-utili/cie-id/" target="_blank" rel="noopener">App CieID e recupero PUK</a>
+        </div>
+      </article>
+
+      <article class="card wide">
+        <span class="badge">Step 2</span>
+        <h3>Installa l’app CieID (ufficiale)</h3>
+        <p>
+          L’app CieID serve per configurare e usare l’accesso con CIE (e può aiutare anche nel recupero PUK, se abilitato).
+          Installa solo l’app ufficiale collegata al sito del Ministero.
+        </p>
+        <div class="links">
+          <a class="btn" href="https://www.cartaidentita.interno.gov.it/info-utili/cie-id/" target="_blank" rel="noopener">Pagina ufficiale CieID</a>
+          <a class="btn" href="https://play.google.com/store/apps/details?hl=it&id=it.ipzs.cieid" target="_blank" rel="noopener">CieID su Google Play</a>
+          <a class="btn" href="https://apps.apple.com/it/app/cieid/id1504644677" target="_blank" rel="noopener">CieID su App Store</a>
+        </div>
+      </article>
+
+      <article class="card wide">
+        <span class="badge">Step 3</span>
+        <h3>Configura l’accesso e fai un test</h3>
+        <p>
+          Apri l’app, configura l’identità e prova l’accesso su un portale che supporta “Entra con CIE”.
+          Se richiesto, abilita NFC sul telefono e appoggia la carta dove l’app te lo indica.
+        </p>
+        <div class="links">
+          <a class="btn" href="https://www.cartaidentita.interno.gov.it/attiva/" target="_blank" rel="noopener">Pagina ufficiale “Attiva”</a>
+          <a class="btn" href="https://www.cartaidentita.interno.gov.it/pgic" target="_blank" rel="noopener">Area personale CIE (accesso)</a>
+        </div>
+      </article>
+
+      <article class="card wide">
+        <span class="badge">Step 4</span>
+        <h3>Se non funziona: 3 soluzioni rapide</h3>
+        <ul class="list">
+          <li><strong>NFC:</strong> verifica che il telefono lo supporti e che sia attivo; riprova appoggiando la carta nella zona NFC corretta.</li>
+          <li><strong>PIN errato:</strong> non insistere “a caso”. Dopo più tentativi puoi bloccare la carta: serve il <strong>PUK</strong> per sbloccare.</li>
+          <li><strong>Piano B:</strong> se ti serve “solo entrare” e sei bloccato, valuta SPID (se già attivo) per completare l’operazione e tornare sulla CIE con calma.</li>
+        </ul>
+        <div class="links">
+          <a class="btn" href="https://www.cartaidentita.interno.gov.it/assistenza/" target="_blank" rel="noopener">FAQ: problemi comuni</a>
+          <a class="btn" href="https://www.cartaidentita.interno.gov.it/downloads/2023/06/Manuale-Entra-con-CIE.pdf" target="_blank" rel="noopener">Manuale ufficiale (PDF)</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="errors-title">
+    <h2 id="errors-title" class="section-title">Errori comuni</h2>
+    <div class="card wide">
+      <ul class="list">
+        <li>PIN/PUK persi o non recuperati prima di iniziare</li>
+        <li>Telefono senza NFC (o NFC disattivo) quando richiesto</li>
+        <li>App non ufficiali o link non affidabili</li>
+        <li>Troppi tentativi PIN “a caso” → rischio blocco e necessità di PUK</li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="videos-title">
+    <h2 id="videos-title" class="section-title">Video utili</h2>
+    <div class="note">
+      <p style="margin:0">
+        Inseriremo 1–2 video molto chiari (con credito autore e link a YouTube), per chi preferisce vedere i passaggi dal vivo.
+      </p>
     </div>
   </section>
 
   <hr class="hr" />
-  <div class="note"><p style="margin:0">IvEmi non raccoglie credenziali. Ti accompagniamo fino ai portali ufficiali.</p></div>
+  <div class="note">
+    <p style="margin:0">
+      IvEmi non raccoglie credenziali né dati personali. Ti accompagniamo fino ai portali ufficiali:
+      schermate e procedure possono cambiare nel tempo.
+    </p>
+  </div>
 </main>
 
 <footer>
@@ -68,7 +196,7 @@
       <p>© <span id="year"></span> IvEmi — Tutti i diritti riservati.</p>
       <div class="cta-row" style="margin:0">
         <a class="btn" href="/assistenza/servizi-pubblici/">Indietro</a>
-        <a class="btn" href="/assistenza/">Assistenza</a>
+        <a class="btn" href="/assistenza/">Guide pratiche</a>
       </div>
     </div>
   </div>
