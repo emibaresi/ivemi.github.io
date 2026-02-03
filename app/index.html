@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>App & giochi — IvEmi</title>
+  <meta name="description" content="App e giochi di IvEmi: esperimenti digitali e progetti pubblicati. Schede pulite e link ufficiali." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://ivemi.it/app/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="App & giochi — IvEmi" />
+  <meta property="og:description" content="Esperimenti digitali: giochi e app. Schede pulite e link ufficiali." />
+  <meta property="og:url" content="https://ivemi.it/app/" />
+  <meta property="og:image" content="/images/og-cover.jpg" />
+
+  <link rel="stylesheet" href="/assets/site.css" />
+</head>
+
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="brand-badge">IE</div>
+      <a href="/">IvEmi</a>
+    </div>
+    <nav>
+      <button class="menu-btn" aria-label="Apri menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰ Menu</button>
+      <ul id="navLinks">
+        <li><a href="/assistenza/">Guide pratiche</a></li>
+        <li><a href="/libri/">Libri</a></li>
+        <li><a href="/app/">App & giochi</a></li>
+        <li><a href="/gemini-racconta/">Gemini racconta</a></li>
+        <li><a href="/busta-paga-semplice/">Busta paga semplice</a></li>
+        <li><a href="/#about">Chi sono</a></li>
+        <li><a href="/#contact">Contatti</a></li>
+        <li><a href="https://youtube.com/@emibaresi?si=-dRrx2M6Ek-qvJw4" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin">YouTube</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="breadcrumb">
+      <a href="/">Home</a> › App & giochi
+    </div>
+
+    <span class="tag">Porta</span>
+    <h1>App & giochi</h1>
+    <p class="section-sub">Esperimenti digitali: giochi semplici, con un’anima.</p>
+
+    <div class="cta-row">
+      <a class="btn" href="/">Torna alla Home</a>
+    </div>
+  </section>
+
+  <section aria-labelledby="apps-title">
+    <h2 id="apps-title" class="section-title">Progetti</h2>
+    <p class="section-sub">Schede essenziali e link ufficiali (Google Play) quando disponibili.</p>
+    <div id="apps-grid" class="grid" aria-live="polite"></div>
+  </section>
+
+  <hr class="hr" />
+  <div class="note">
+    <p style="margin:0">
+      Se un progetto è in preparazione, comparirà “In arrivo”.
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap">
+      <p>© <span id="year"></span> IvEmi — Tutti i diritti riservati.</p>
+      <div class="cta-row" style="margin:0">
+        <a class="btn" href="/">Home</a>
+        <a class="btn" href="/app/">App & giochi</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  if (location.hostname === 'www.ivemi.it') {
+    location.replace('https://ivemi.it' + location.pathname + location.search + location.hash);
+  }
+</script>
+
+<script>
+(async () => {
+  try {
+    const appsRes  = await fetch('/data/apps.json', { cache: 'no-store' });
+    if (!appsRes.ok) throw new Error('apps.json not found');
+    const apps = await appsRes.json();
+    const appsGrid = document.getElementBy
