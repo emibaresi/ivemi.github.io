@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Libri — IvEmi</title>
+  <meta name="description" content="Libri di IvEmi: narrativa e progetti editoriali di Gemini. Schede pulite, link ufficiali e interviste video quando disponibili." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://ivemi.it/libri/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Libri — IvEmi" />
+  <meta property="og:description" content="Narrativa e progetti editoriali di Gemini. Link ufficiali e interviste video quando disponibili." />
+  <meta property="og:url" content="https://ivemi.it/libri/" />
+  <meta property="og:image" content="/images/og-cover.jpg" />
+
+  <link rel="stylesheet" href="/assets/site.css" />
+</head>
+
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="brand-badge">IE</div>
+      <a href="/">IvEmi</a>
+    </div>
+    <nav>
+      <button class="menu-btn" aria-label="Apri menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰ Menu</button>
+      <ul id="navLinks">
+        <li><a href="/assistenza/">Guide pratiche</a></li>
+        <li><a href="/libri/">Libri</a></li>
+        <li><a href="/app/">App & giochi</a></li>
+        <li><a href="/gemini-racconta/">Gemini racconta</a></li>
+        <li><a href="/busta-paga-semplice/">Busta paga semplice</a></li>
+        <li><a href="/#about">Chi sono</a></li>
+        <li><a href="/#contact">Contatti</a></li>
+        <li><a href="https://youtube.com/@emibaresi?si=-dRrx2M6Ek-qvJw4" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin">YouTube</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="breadcrumb">
+      <a href="/">Home</a> › Libri
+    </div>
+
+    <span class="tag">Porta</span>
+    <h1>Libri</h1>
+    <p class="section-sub">Storie e progetti editoriali. Se cerchi una voce, comincia da qui.</p>
+
+    <div class="cta-row">
+      <a class="btn" href="/">Torna alla Home</a>
+      <a class="btn icon" href="https://youtube.com/@emibaresi?si=-dRrx2M6Ek-qvJw4" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin" aria-label="Apri il canale YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:18px;height:18px">
+          <path d="M23.5 6.2a4.8 4.8 0 0 0-.8-2.2 3 3 0 0 0-2-.9C18.5 3 12 3 12 3s-6.5 0-8.7.1a3 3 0 0 0-2 .9 4.8 4.8 0 0 0-.8 2.2A36.4 36.4 0 0 0 0 12a36.4 36.4 0 0 0 .5 5.8c.1.8.4 1.5.8 2.2.5.6 1.2 1 2 .9C5.5 21 12 21 12 21s6.5 0 8.7-.1a3 3 0 0 0 2-.9c.4-.7.7-1.4.8-2.2.4-1.9.5-3.9.5-5.8 0-2-.1-4-.5-5.8Zm-14 9.4V8.4l6.2 3.6-6.2 3.6Z"/>
+        </svg>
+        YouTube
+      </a>
+    </div>
+  </section>
+
+  <section aria-labelledby="books-title">
+    <h2 id="books-title" class="section-title">Titoli</h2>
+    <p class="section-sub">Schede essenziali, link ufficiali e video quando presenti.</p>
+    <div id="books-grid" class="grid" aria-live="polite"></div>
+  </section>
+
+  <hr class="hr" />
+  <div class="note">
+    <p style="margin:0">
+      Se un link non è ancora disponibile, comparirà “In arrivo”.
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap">
+      <p>© <span id="year"></span> IvEmi — Tutti i diritti riservati.</p>
+      <div class="cta-row" style="margin:0">
+        <a class="btn" href="/">Home</a>
+        <a class="btn" href="/libri/">Libri</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  if (location.hostname === 'www.ivemi.it') {
+    location.replace('https://ivemi.it' + location.pathname + location.search + location.hash);
+  }
+</script>
+
+<script>
+(async () => {
+  try {
+    const booksRes = await fetch('/data/books.json', { cache: 'no-store' });
+    if (!booksRes.ok) throw new Error('books.json not found');
+    const books = await booksRes.json();
+    const booksGrid = document.getElementById('books-grid');
+
+    booksGrid.innerHTML = (Array.isArray(books) ? books : []).map(b => {
+      const coverImg = b.cover && b.cover.trim()
+        ? `<img src="${b.cover}" alt="Copertina di ${b.title}">`
+        : `<div class="placeholder" aria-hidden="true">Copertina</div>`;
+
+      const cover = b.video && b.video.trim()
+        ? `<a class="thumb" href="${b.video}" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin" aria-label="Guarda su YouTube">
+             ${coverImg}
+             <span class="play-badge" aria-hidden="true">
+               <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+             </span>
+           </a>`
+        : `<div class="thumb" aria-hidden="false">${coverImg}</div>`;
+
+      const amazonBtn = b.url && b.url.trim()
+        ? `<a class="btn" href="${b.url}" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin">Scopri su Amazon</a>`
+        : `<span class="badge" title="Link non disponibile">In arrivo</span>`;
+
+      const videoBtn = b.video && b.video.trim()
+        ? `<a class="btn icon" href="${b.video}" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin" aria-label="Guarda su YouTube">
+             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:18px;height:18px">
+               <path d="M23.5 6.2a4.8 4.8 0 0 0-.8-2.2 3 3 0 0 0-2-.9C18.5 3 12 3 12 3s-6.5 0-8.7.1a3 3 0 0 0-2 .9 4.8 4.8 0 0 0-.8 2.2A36.4 36.4 0 0 0 0 12a36.4 36.4 0 0 0 .5 5.8c.1.8.4 1.5.8 2.2.5.6 1.2 1 2 .9C5.5 21 12 21 12 21s6.5 0 8.7-.1a3 3 0 0 0 2-.9c.4-.7.7-1.4.8-2.2.4-1.9.5-3.9.5-5.8 0-2-.1-4-.5-5.8Zm-14 9.4V8.4l6.2 3.6-6.2 3.6Z"/>
+             </svg>
+             Guarda video
+           </a>`
+        : '';
+
+      return `
+        <article class="card">
+          <div class="item">
+            ${cover}
+            <div>
+              <span class="badge">${b.badge || ''}</span>
+              <h3>${b.title || ''}</h3>
+              <p>${b.desc || ''}</p>
+              <div class="links">${amazonBtn}${videoBtn ? ' ' + videoBtn : ''}</div>
+            </div>
+          </div>
+        </article>`;
+    }).join('');
+  } catch (e) {
+    document.getElementById('books-grid').innerHTML = '<p class="section-sub">Impossibile caricare i libri.</p>';
+  }
+})();
+</script>
+</body>
+</html>
