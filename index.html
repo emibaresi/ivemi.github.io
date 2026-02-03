@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>IvEmi — Parole, idee, giochi</title>
-  <meta name="description" content="IvEmi è lo spazio autoriale di Gemini: libri, app, video e Guide pratiche. Percorsi chiari per SPID, CIE, sanità digitale e servizi online quotidiani, con link ufficiali." />
+  <meta name="description" content="IvEmi è il laboratorio di Gemini: libri, app, video e Guide pratiche. Un luogo dove curiosità e concretezza diventano storie, strumenti e percorsi chiari con fonti ufficiali." />
   <meta name="robots" content="index,follow" />
 
   <!-- ✅ Dominio canonico -->
@@ -13,12 +13,12 @@
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="IvEmi — Parole, idee, giochi" />
-  <meta property="og:description" content="Lo spazio autoriale di Gemini: libri, app, video e Guide pratiche (SPID, CIE, sanità digitale), con link ufficiali." />
+  <meta property="og:description" content="Il laboratorio di Gemini: libri, app, video, Guide pratiche. Storie e strumenti per orientarsi, con semplicità e trasparenza." />
   <meta property="og:url" content="https://ivemi.it/" />
   <meta property="og:image" content="/images/og-cover.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- 🔎 Schema.org (collega social ufficiali) -->
+  <!-- 🔎 Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,6 +37,7 @@
   <!-- ✅ CSS condiviso -->
   <link rel="stylesheet" href="/assets/site.css" />
 </head>
+
 <body>
 <header>
   <div class="nav">
@@ -48,9 +49,10 @@
       <button class="menu-btn" aria-label="Apri menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰ Menu</button>
       <ul id="navLinks">
         <li><a href="/assistenza/">Guide pratiche</a></li>
-        <li><a href="#apps">App</a></li>
-        <li><a href="#books">Libri</a></li>
-        <li><a href="#videos">Video</a></li>
+        <li><a href="/libri/">Libri</a></li>
+        <li><a href="/app/">App & giochi</a></li>
+        <li><a href="/gemini-racconta/">Gemini racconta</a></li>
+        <li><a href="/busta-paga-semplice/">Busta paga semplice</a></li>
         <li><a href="#about">Chi sono</a></li>
         <li><a href="#contact">Contatti</a></li>
         <li><a href="https://youtube.com/@emibaresi?si=-dRrx2M6Ek-qvJw4" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin">YouTube</a></li>
@@ -60,28 +62,34 @@
 </header>
 
 <main id="top">
-  <!-- HERO -->
+  <!-- HERO / IDENTITÀ -->
   <section class="hero container">
     <span class="tag">Parole, idee, giochi</span>
     <h1>IvEmi — lo spazio autoriale di Gemini</h1>
 
     <p>
-      IvEmi è il mio laboratorio: libri, app, video e guide pratiche.
-      Perché il digitale è diventato vita quotidiana, e a volte serve una mappa: cosa serve, cosa fare, dove cliccare,
-      e come evitare gli errori più comuni. Ti accompagno fino alle fonti ufficiali, con semplicità e trasparenza.
+      IvEmi è il mio laboratorio: idee in prova, storie in costruzione, piccoli strumenti che diventano utili davvero.
+      Perché il digitale è diventato vita quotidiana, e quando serve una mappa la cerco e la metto in chiaro:
+      cosa serve, cosa fare, dove cliccare, e come evitare gli errori più comuni.
+      Ti accompagno fino alle fonti ufficiali, con semplicità e trasparenza.
     </p>
 
     <div class="note" style="margin:14px 0 0">
-      <p style="margin:0;color:var(--muted)">
-        Qui trovi <strong style="color:var(--text)">Guide pratiche</strong> per orientarti tra
-        <strong style="color:var(--text)">SPID</strong>, <strong style="color:var(--text)">CIE</strong>,
-        <strong style="color:var(--text)">sanità online</strong> e servizi digitali quotidiani — utili anche se stai aiutando qualcun altro.
+      <p style="margin:0">
+        Qui trovi cinque porte. Entra dove ti porta la curiosità.
       </p>
     </div>
 
-    <div class="cta-row" style="margin-top:14px">
+    <div class="tags">
+      <span class="tag">Scrittura</span>
+      <span class="tag">Giochi</span>
+      <span class="tag">Guide pratiche</span>
+      <span class="tag">Video</span>
+      <span class="tag">Curiosità</span>
+    </div>
+
+    <div class="cta-row">
       <a class="btn primary" href="#porte">Esplora</a>
-      <a class="btn" href="/assistenza/">Vai alle Guide</a>
       <a class="btn icon" href="https://youtube.com/@emibaresi?si=-dRrx2M6Ek-qvJw4" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin" aria-label="Apri il canale YouTube di IvEmi">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a4.8 4.8 0 0 0-.8-2.2 3 3 0 0 0-2-.9C18.5 3 12 3 12 3s-6.5 0-8.7.1a3 3 0 0 0-2 .9 4.8 4.8 0 0 0-.8 2.2A36.4 36.4 0 0 0 0 12a36.4 36.4 0 0 0 .5 5.8c.1.8.4 1.5.8 2.2.5.6 1.2 1 2 .9C5.5 21 12 21 12 21s6.5 0 8.7-.1a3 3 0 0 0 2-.9c.4-.7.7-1.4.8-2.2.4-1.9.5-3.9.5-5.8 0-2-.1-4-.5-5.8Zm-14 9.4V8.4l6.2 3.6-6.2 3.6Z"/></svg>
         YouTube
@@ -89,302 +97,86 @@
     </div>
   </section>
 
-  <!-- PORTE (HUB) -->
+  <!-- PORTE -->
   <section id="porte" class="container" aria-labelledby="porte-title">
-    <h2 id="porte-title" class="section-title">Le porte</h2>
-    <p class="section-sub">Cinque ingressi, un solo sito: scegli dove iniziare.</p>
+    <h2 id="porte-title" class="section-title">Le porte di IvEmi</h2>
+    <p class="section-sub">Cinque aree. Poche promesse, mantenute bene.</p>
 
     <div class="grid">
       <article class="card">
-        <span class="badge">Guide pratiche</span>
-        <h3>Fare le cose online, senza impazzire</h3>
-        <p>SPID, CIE, sanità digitale e servizi quotidiani. Percorsi chiari, link ufficiali, zero fuffa.</p>
+        <span class="badge">Libri</span>
+        <h3>Storie & romanzi</h3>
+        <p>Scrittura, mondi, personaggi. Se cerchi una voce, comincia da qui.</p>
         <div class="links">
-          <a class="btn primary" href="#guide">Apri</a>
-          <a class="btn" href="/assistenza/">Tutte le guide</a>
+          <a class="btn primary" href="/libri/">Entra</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="badge">App & giochi</span>
+        <h3>Esperimenti digitali</h3>
+        <p>Giochi semplici, con un’anima. Piccole idee che diventano esperienze.</p>
+        <div class="links">
+          <a class="btn primary" href="/app/">Entra</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="badge">Guide pratiche</span>
+        <h3>SPID, CIE, sanità online</h3>
+        <p>Percorsi chiari e link ufficiali. Zero moduli, zero credenziali, solo orientamento.</p>
+        <div class="links">
+          <a class="btn primary" href="/assistenza/">Entra</a>
         </div>
       </article>
 
       <article class="card">
         <span class="badge">Gemini racconta</span>
         <h3>Monologhi narrativi</h3>
-        <p>Sport, destino, carattere. Storie che respirano: Maradona, Senna, Ronaldo e altri.</p>
+        <p>Sport, memoria, persone leggendarie. Racconti come piccoli film.</p>
         <div class="links">
-          <a class="btn primary" href="#gemini-racconta">Apri</a>
+          <a class="btn primary" href="/gemini-racconta/">Entra</a>
         </div>
       </article>
 
       <article class="card">
         <span class="badge">Busta paga semplice</span>
-        <h3>Capire lavoro e numeri</h3>
-        <p>Diritti, voci, trattenute. Spiegazioni pulite, senza linguaggio da addetti ai lavori.</p>
+        <h3>Capire lavoro & diritti</h3>
+        <p>Numeri e tutele spiegati senza linguaggio da addetti ai lavori.</p>
         <div class="links">
-          <a class="btn primary" href="#busta-paga">Apri</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="badge">App & giochi</span>
-        <h3>Esperienze digitali</h3>
-        <p>Giochi semplici con un’anima: per pensare, osservare, rallentare.</p>
-        <div class="links">
-          <a class="btn primary" href="#apps">Apri</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="badge">Libri</span>
-        <h3>Storie e mondi</h3>
-        <p>Scrivo per capire e per restare. Qui trovi i miei titoli e i prossimi arrivi.</p>
-        <div class="links">
-          <a class="btn primary" href="#books">Apri</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- GUIDE -->
-  <section id="guide" class="container" aria-labelledby="guide-title">
-    <h2 id="guide-title" class="section-title">Guide pratiche</h2>
-    <p class="section-sub">Metodo fisso: cosa serve → passi → errori comuni → link ufficiali.</p>
-
-    <div class="grid">
-      <article class="card">
-        <span class="badge">Guida</span>
-        <h3>SPID</h3>
-        <p>Cos’è, cosa serve e come attivarlo senza perdersi tra mille pagine.</p>
-        <div class="links">
-          <a class="btn primary" href="/assistenza/servizi-pubblici/spid/">Apri</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="badge">Guida</span>
-        <h3>CIE</h3>
-        <p>PIN/PUK, app CieID, NFC: come usarla online e cosa fare se non funziona.</p>
-        <div class="links">
-          <a class="btn primary" href="/assistenza/servizi-pubblici/cie/">Apri</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="badge">Guida</span>
-        <h3>Prenotare una visita — Lombardia</h3>
-        <p>Passaggi ordinati e punti critici per prenotare online senza impazzire.</p>
-        <div class="links">
-          <a class="btn primary" href="/assistenza/servizi-pubblici/prenotare-visita-lombardia/">Apri</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="badge">Guida</span>
-        <h3>Fascicolo Sanitario Elettronico</h3>
-        <p>Come accedere e consultare documenti e referti in modo sicuro.</p>
-        <div class="links">
-          <a class="btn primary" href="/assistenza/servizi-pubblici/fascicolo-sanitario-elettronico/">Apri</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="badge">Guida</span>
-        <h3>Cambio medico di base</h3>
-        <p>Cosa serve e come farlo online, evitando gli errori più comuni.</p>
-        <div class="links">
-          <a class="btn primary" href="/assistenza/servizi-pubblici/cambio-medico-di-base/">Apri</a>
-          <a class="btn" href="/assistenza/">Tutte le guide</a>
+          <a class="btn primary" href="/busta-paga-semplice/">Entra</a>
         </div>
       </article>
     </div>
 
     <div class="note" style="margin-top:14px">
       <p style="margin:0">
-        Nota: non chiediamo credenziali e non raccogliamo dati. Ti accompagniamo fino ai portali ufficiali e ti aiutiamo a riconoscerli.
+        Nota: nelle guide non trovi mai login “finti” o richieste di credenziali.
+        Ti accompagniamo fino ai portali ufficiali e ti aiutiamo a riconoscerli.
       </p>
     </div>
   </section>
 
-  <!-- Apps (dinamiche) -->
-  <section id="apps" class="container" aria-labelledby="apps-title">
-    <h2 id="apps-title" class="section-title">App & giochi</h2>
-    <p class="section-sub">Esperienze digitali leggere, ma non superficiali.</p>
-    <div id="apps-grid" class="grid" aria-live="polite"></div>
-  </section>
-
-  <!-- Books (dinamici) -->
-  <section id="books" class="container" aria-labelledby="books-title">
-    <h2 id="books-title" class="section-title">Libri</h2>
-    <p class="section-sub">Le parole sono il primo luogo dove ho imparato a creare mondi. Scrivo per capire, e per restare.</p>
-    <div id="books-grid" class="grid" aria-live="polite"></div>
-    <p class="section-sub" style="margin-top:10px">Altri titoli saranno aggiunti in seguito.</p>
-  </section>
-
-  <!-- 🎥 VIDEO (SEPARATI IN DUE SOTTOSEZIONI) -->
-  <section id="videos" class="container" aria-labelledby="videos-title">
-    <h2 id="videos-title" class="section-title">Video</h2>
-    <p class="section-sub">
-      Due filoni diversi, stessa idea: raccontare bene e spiegare semplice.
-    </p>
-
-    <!-- GEMINI RACCONTA -->
-    <div id="gemini-racconta" style="margin-top:14px">
-      <h3 class="section-title" style="margin-bottom:8px">Gemini racconta</h3>
-      <p class="section-sub" style="margin-top:0">
-        Monologhi narrativi: lo sport come storia, carattere, destino.
-      </p>
-
-      <div class="grid">
-        <!-- Maradona -->
-        <article class="card wide">
-          <div class="item">
-            <a class="thumb" href="https://youtu.be/Qckj5o_66jE?si=fQ_wNhPdORE0CDvU" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin"
-               aria-label="Guarda su YouTube: Diego Armando Maradona — Parte uno">
-              <img src="https://img.youtube.com/vi/DlfCECy2UJ0/hqdefault.jpg"
-                   alt="Anteprima video Diego Armando Maradona — Parte uno">
-              <span class="play-badge" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              </span>
-            </a>
-            <div>
-              <span class="badge">Gemini racconta</span>
-              <h3>Diego Armando Maradona — Parte uno</h3>
-              <p>
-                Dalla polvere di Villa Fiorito ai primi passi verso la leggenda.
-                Un racconto teatrale, intimo ed epico.
-              </p>
-              <div class="links">
-                <a class="btn icon" href="https://youtu.be/Qckj5o_66jE?si=fQ_wNhPdORE0CDvU" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:18px;height:18px">
-                    <path d="M23.5 6.2a4.8 4.8 0 0 0-.8-2.2 3 3 0 0 0-2-.9C18.5 3 12 3 12 3s-6.5 0-8.7.1a3 3 0 0 0-2 .9 4.8 4.8 0 0 0-.8 2.2A36.4 36.4 0 0 0 0 12a36.4 36.4 0 0 0 .5 5.8c.1.8.4 1.5.8 2.2.5.6 1.2 1 2 .9C5.5 21 12 21 12 21s6.5 0 8.7-.1a3 3 0 0 0 2-.9c.4-.7.7-1.4.8-2.2.4-1.9.5-3.9.5-5.8 0-2-.1-4-.5-5.8Zm-14 9.4V8.4l6.2 3.6-6.2 3.6Z"/>
-                  </svg>
-                  Guarda su YouTube
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Senna -->
-        <article class="card wide">
-          <div class="item">
-            <a class="thumb" href="https://youtu.be/4W-4jyRt6uE?si=gEJkDjWVMo7b0Gl_" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin"
-               aria-label="Guarda su YouTube: Ayrton Senna — Interlagos 1991">
-              <img src="https://img.youtube.com/vi/4W-4jyRt6uE/hqdefault.jpg"
-                   alt="Anteprima video Ayrton Senna — Interlagos 1991">
-              <span class="play-badge" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              </span>
-            </a>
-            <div>
-              <span class="badge">Gemini racconta</span>
-              <h3>Ayrton Senna — Interlagos 1991</h3>
-              <p>
-                La vittoria in casa, con il corpo al limite. Un episodio che non è solo sport:
-                è volontà, dolore e grazia.
-              </p>
-              <div class="links">
-                <a class="btn icon" href="https://youtu.be/4W-4jyRt6uE?si=gEJkDjWVMo7b0Gl_" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:18px;height:18px">
-                    <path d="M23.5 6.2a4.8 4.8 0 0 0-.8-2.2 3 3 0 0 0-2-.9C18.5 3 12 3 12 3s-6.5 0-8.7.1a3 3 0 0 0-2 .9 4.8 4.8 0 0 0-.8 2.2A36.4 36.4 0 0 0 0 12a36.4 36.4 0 0 0 .5 5.8c.1.8.4 1.5.8 2.2.5.6 1.2 1 2 .9C5.5 21 12 21 12 21s6.5 0 8.7-.1a3 3 0 0 0 2-.9c.4-.7.7-1.4.8-2.2.4-1.9.5-3.9.5-5.8 0-2-.1-4-.5-5.8Zm-14 9.4V8.4l6.2 3.6-6.2 3.6Z"/>
-                  </svg>
-                  Guarda su YouTube
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Ronaldo -->
-        <article class="card wide">
-          <div class="item">
-            <a class="thumb" href="https://youtu.be/PIavmo931HQ?si=rNBgeXt_KLj-5qQh" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin"
-               aria-label="Guarda su YouTube: Ronaldo — Il gol di Compostela">
-              <img src="https://img.youtube.com/vi/PIavmo931HQ/hqdefault.jpg"
-                   alt="Anteprima video Ronaldo — Il gol di Compostela">
-              <span class="play-badge" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              </span>
-            </a>
-            <div>
-              <span class="badge">Gemini racconta</span>
-              <h3>Ronaldo — Il gol di Compostela</h3>
-              <p>
-                Una corsa che sembra un taglio nella realtà: potenza, leggerezza, istinto puro.
-                Il gol che annuncia qualcosa di irripetibile.
-              </p>
-              <div class="links">
-                <a class="btn icon" href="https://youtu.be/PIavmo931HQ?si=rNBgeXt_KLj-5qQh" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:18px;height:18px">
-                    <path d="M23.5 6.2a4.8 4.8 0 0 0-.8-2.2 3 3 0 0 0-2-.9C18.5 3 12 3 12 3s-6.5 0-8.7.1a3 3 0 0 0-2 .9 4.8 4.8 0 0 0-.8 2.2A36.4 36.4 0 0 0 0 12a36.4 36.4 0 0 0 .5 5.8c.1.8.4 1.5.8 2.2.5.6 1.2 1 2 .9C5.5 21 12 21 12 21s6.5 0 8.7-.1a3 3 0 0 0 2-.9c.4-.7.7-1.4.8-2.2.4-1.9.5-3.9.5-5.8 0-2-.1-4-.5-5.8Zm-14 9.4V8.4l6.2 3.6-6.2 3.6Z"/>
-                  </svg>
-                  Guarda su YouTube
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="cta-row" style="margin-top:12px">
-        <a class="btn icon" href="https://youtube.com/@emibaresi?si=-dRrx2M6Ek-qvJw4" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:18px;height:18px">
-            <path d="M23.5 6.2a4.8 4.8 0 0 0-.8-2.2 3 3 0 0 0-2-.9C18.5 3 12 3 12 3s-6.5 0-8.7.1a3 3 0 0 0-2 .9 4.8 4.8 0 0 0-.8 2.2A36.4 36.4 0 0 0 0 12a36.4 36.4 0 0 0 .5 5.8c.1.8.4 1.5.8 2.2.5.6 1.2 1 2 .9C5.5 21 12 21 12 21s6.5 0 8.7-.1a3 3 0 0 0 2-.9c.4-.7.7-1.4.8-2.2.4-1.9.5-3.9.5-5.8 0-2-.1-4-.5-5.8Zm-14 9.4V8.4l6.2 3.6-6.2 3.6Z"/>
-          </svg>
-          Vai al canale
-        </a>
-      </div>
-    </div>
-
-    <hr class="hr" />
-
-    <!-- BUSTA PAGA SEMPLICE -->
-    <div id="busta-paga" style="margin-top:14px">
-      <h3 class="section-title" style="margin-bottom:8px">Busta paga semplice</h3>
-      <p class="section-sub" style="margin-top:0">
-        Capire lavoro, diritti e numeri senza perdersi nel linguaggio tecnico.
-      </p>
-
-      <article class="card wide">
-        <span class="badge">Playlist</span>
-        <h3>Ultimi video dal canale</h3>
-        <p class="section-sub" style="margin-top:0">
-          Una selezione dei contenuti più recenti: spiegazioni sulla busta paga, diritti dei lavoratori
-          e altri contenuti divulgativi.
-        </p>
-        <iframe class="yt-embed"
-          src="https://www.youtube.com/embed/videoseries?list=PLv0--p5YiP_zD3U0-7_UZ0kaEs7sx4ihT"
-          title="Ultimi video di IvEmi"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-          referrerpolicy="strict-origin-when-cross-origin"></iframe>
-
-        <div class="cta-row" style="margin-top:12px">
-          <a class="btn icon" href="https://youtube.com/@emibaresi?si=-dRrx2M6Ek-qvJw4" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:18px;height:18px">
-              <path d="M23.5 6.2a4.8 4.8 0 0 0-.8-2.2 3 3 0 0 0-2-.9C18.5 3 12 3 12 3s-6.5 0-8.7.1a3 3 0 0 0-2 .9 4.8 4.8 0 0 0-.8 2.2A36.4 36.4 0 0 0 0 12a36.4 36.4 0 0 0 .5 5.8c.1.8.4 1.5.8 2.2.5.6 1.2 1 2 .9C5.5 21 12 21 12 21s6.5 0 8.7-.1a3 3 0 0 0 2-.9c.4-.7.7-1.4.8-2.2.4-1.9.5-3.9.5-5.8 0-2-.1-4-.5-5.8Zm-14 9.4V8.4l6.2 3.6-6.2 3.6Z"/>
-            </svg>
-            Guarda tutti i video
-          </a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="container">
-    <h2 class="section-title">Chi è Gemini</h2>
+  <!-- ABOUT -->
+  <section id="about" class="container" aria-labelledby="about-title">
+    <h2 id="about-title" class="section-title">Chi è Gemini</h2>
     <div class="grid">
       <article class="card wide">
-        <p>Gemini è la voce autoriale di IvEmi: scrittura, progetti digitali e guide pratiche. Unisco curiosità e concretezza: creo storie e strumenti, e quando serve costruisco percorsi chiari per orientarsi nel digitale quotidiano, sempre con fonti ufficiali e trasparenza.</p>
-        <blockquote style="margin:12px 0 0; padding-left:14px; border-left:2px solid rgba(255,255,255,.2); color:var(--muted)">«Ogni forma è un modo per dire: ho visto.»</blockquote>
+        <p>
+          Gemini è la voce autoriale di IvEmi: scrittura, progetti digitali e guide pratiche.
+          Unisco curiosità e concretezza: creo storie e strumenti, e quando serve costruisco percorsi chiari
+          per orientarsi nel digitale quotidiano, sempre con fonti ufficiali e trasparenza.
+        </p>
+        <blockquote style="margin:12px 0 0; padding-left:14px; border-left:2px solid rgba(255,255,255,.2); color:var(--muted)">
+          «Ogni forma è un modo per dire: ho visto.»
+        </blockquote>
       </article>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="container">
-    <h2 class="section-title">Contatti</h2>
+  <!-- CONTACT -->
+  <section id="contact" class="container" aria-labelledby="contact-title">
+    <h2 id="contact-title" class="section-title">Contatti</h2>
     <div class="grid">
       <article class="card wide">
         <p>Per collaborazioni, stampa o domande: <a href="mailto:myivemi@gmail.com">myivemi@gmail.com</a></p>
@@ -409,97 +201,11 @@
   </div>
 </footer>
 
-<!-- Script: anno nel footer -->
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-
-<!-- ✅ Redirect www -> dominio principale -->
 <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
   if (location.hostname === 'www.ivemi.it') {
     location.replace('https://ivemi.it' + location.pathname + location.search + location.hash);
   }
-</script>
-
-<!-- Script: carica App e Libri da JSON -->
-<script>
-(async () => {
-  // Apps
-  try {
-    const appsRes  = await fetch('data/apps.json', { cache: 'no-store' });
-    if (!appsRes.ok) throw new Error('apps.json not found');
-    const apps = await appsRes.json();
-    const appsGrid = document.getElementById('apps-grid');
-    appsGrid.innerHTML = (Array.isArray(apps) ? apps : []).map(a => {
-      const icon = a.icon && a.icon.trim()
-        ? `<img src="${a.icon}" alt="Icona di ${a.title}" style="width:72px;height:72px;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:#202028" />`
-        : `<div class="placeholder" aria-hidden="true">Icona</div>`;
-      const urlBtn = a.url && a.url.trim()
-        ? `<a class="btn" href="${a.url}" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin">Scarica su Google Play</a>`
-        : `<span class="badge" title="Link non disponibile">In arrivo</span>`;
-      return `
-        <article class="card">
-          <div class="item">
-            ${icon}
-            <div>
-              <span class="badge">${a.badge || ''}</span>
-              <h3>${a.title || ''}</h3>
-              <p>${a.desc || ''}</p>
-              <div class="links">${urlBtn}</div>
-            </div>
-          </div>
-        </article>`;
-    }).join('');
-  } catch (e) {
-    document.getElementById('apps-grid').innerHTML = '<p class="section-sub">Impossibile caricare le app.</p>';
-  }
-
-  // Books
-  try {
-    const booksRes = await fetch('data/books.json', { cache: 'no-store' });
-    if (!booksRes.ok) throw new Error('books.json not found');
-    const books = await booksRes.json();
-    const booksGrid = document.getElementById('books-grid');
-    booksGrid.innerHTML = (Array.isArray(books) ? books : []).map(b => {
-      const coverImg = b.cover && b.cover.trim()
-        ? `<img src="${b.cover}" alt="Copertina di ${b.title}">`
-        : `<div class="placeholder" aria-hidden="true">Copertina</div>`;
-
-      const cover = b.video && b.video.trim()
-        ? `<a class="thumb" href="${b.video}" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin" aria-label="Guarda l'intervista su YouTube">
-             ${coverImg}
-             <span class="play-badge" aria-hidden="true">
-               <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-             </span>
-           </a>`
-        : `<div class="thumb" aria-hidden="false">${coverImg}</div>`;
-
-      const amazonBtn = b.url && b.url.trim()
-        ? `<a class="btn" href="${b.url}" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin">Scopri su Amazon</a>`
-        : `<span class="badge" title="Link non disponibile">In arrivo</span>`;
-
-      const videoBtn = b.video && b.video.trim()
-        ? `<a class="btn icon" href="${b.video}" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin" aria-label="Guarda l'intervista su YouTube">
-             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:18px;height:18px"><path d="M23.5 6.2a4.8 4.8 0 0 0-.8-2.2 3 3 0 0 0-2-.9C18.5 3 12 3 12 3s-6.5 0-8.7.1a3 3 0 0 0-2 .9 4.8 4.8 0 0 0-.8 2.2A36.4 36.4 0 0 0 0 12a36.4 36.4 0 0 0 .5 5.8c.1.8.4 1.5.8 2.2.5.6 1.2 1 2 .9C5.5 21 12 21 12 21s6.5 0 8.7-.1a3 3 0 0 0 2-.9c.4-.7.7-1.4.8-2.2.4-1.9.5-3.9.5-5.8 0-2-.1-4-.5-5.8Zm-14 9.4V8.4l6.2 3.6-6.2 3.6Z"/></svg>
-             Guarda l'intervista
-           </a>`
-        : '';
-
-      return `
-        <article class="card">
-          <div class="item">
-            ${cover}
-            <div>
-              <span class="badge">${b.badge || ''}</span>
-              <h3>${b.title || ''}</h3>
-              <p>${b.desc || ''}</p>
-              <div class="links">${amazonBtn}${videoBtn ? ' ' + videoBtn : ''}</div>
-            </div>
-          </div>
-        </article>`;
-    }).join('');
-  } catch (e) {
-    document.getElementById('books-grid').innerHTML = '<p class="section-sub">Impossibile caricare i libri.</p>';
-  }
-})();
 </script>
 </body>
 </html>
