@@ -8,6 +8,7 @@
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://ivemi.it/app/" />
 
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="App & giochi — IvEmi" />
   <meta property="og:description" content="Esperimenti digitali: giochi e app. Schede pulite e link ufficiali." />
@@ -88,10 +89,43 @@
   }
 </script>
 
+<!-- Carica App da JSON -->
 <script>
 (async () => {
   try {
     const appsRes  = await fetch('/data/apps.json', { cache: 'no-store' });
     if (!appsRes.ok) throw new Error('apps.json not found');
     const apps = await appsRes.json();
-    const appsGrid = document.getElementBy
+    const appsGrid = document.getElementById('apps-grid');
+
+    appsGrid.innerHTML = (Array.isArray(apps) ? apps : []).map(a => {
+      const icon = a.icon && a.icon.trim()
+        ? `<img src="${a.icon}" alt="Icona di ${a.title}" style="width:72px;height:72px;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:#202028" />`
+        : `<div class="placeholder" aria-hidden="true">Icona</div>`;
+
+      const urlBtn = a.url && a.url.trim()
+        ? `<a class="btn" href="${a.url}" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin">Scarica su Google Play</a>`
+        : `<span class="badge" title="Link non disponibile">In arrivo</span>`;
+
+      const badge = (a.badge && a.badge.trim()) ? a.badge : '';
+
+      return `
+        <article class="card">
+          <div class="item">
+            ${icon}
+            <div>
+              <span class="badge">${badge}</span>
+              <h3>${a.title || ''}</h3>
+              <p>${a.desc || ''}</p>
+              <div class="links">${urlBtn}</div>
+            </div>
+          </div>
+        </article>`;
+    }).join('');
+  } catch (e) {
+    document.getElementById('apps-grid').innerHTML = '<p class="section-sub">Impossibile caricare le app.</p>';
+  }
+})();
+</script>
+</body>
+</html>
