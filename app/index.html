@@ -8,7 +8,6 @@
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://ivemi.it/app/" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="App & giochi — IvEmi" />
   <meta property="og:description" content="Esperimenti digitali: giochi e app. Schede pulite e link ufficiali." />
@@ -43,14 +42,10 @@
 
 <main class="container">
   <section class="hero">
-    <div class="breadcrumb">
-      <a href="/">Home</a> › App & giochi
-    </div>
-
+    <div class="breadcrumb"><a href="/">Home</a> › App & giochi</div>
     <span class="tag">Porta</span>
     <h1>App & giochi</h1>
     <p class="section-sub">Esperimenti digitali: giochi semplici, con un’anima.</p>
-
     <div class="cta-row">
       <a class="btn" href="/">Torna alla Home</a>
     </div>
@@ -58,12 +53,11 @@
 
   <section aria-labelledby="apps-title">
     <h2 id="apps-title" class="section-title">Progetti</h2>
-    <p class="section-sub">Schede essenziali e link ufficiali (Google Play) quando disponibili.</p>
+    <p class="section-sub">Schede essenziali e link ufficiali quando disponibili.</p>
     <div id="apps-grid" class="grid" aria-live="polite"></div>
   </section>
 
-  <hr class="hr" />
-  <div class="note">
+  <div class="note" style="margin-top:14px">
     <p style="margin:0">
       Se un progetto è in preparazione, comparirà “In arrivo”.
     </p>
@@ -89,25 +83,69 @@
   }
 </script>
 
-<!-- Carica App da JSON -->
 <script>
 (async () => {
-  try {
-    const appsRes  = await fetch('/data/apps.json', { cache: 'no-store' });
-    if (!appsRes.ok) throw new Error('apps.json not found');
-    const apps = await appsRes.json();
-    const appsGrid = document.getElementById('apps-grid');
+  const grid = document.getElementById('apps-grid');
 
-    appsGrid.innerHTML = (Array.isArray(apps) ? apps : []).map(a => {
+  function normalizeList(json) {
+    // accetta: [ ... ] oppure { apps: [...] } oppure { items: [...] }
+    if (Array.isArray(json)) return json;
+    if (json && Array.isArray(json.apps)) return json.apps;
+    if (json && Array.isArray(json.items)) return json.items;
+    return [];
+  }
+
+  function pickLink(a) {
+    // prova vari nomi comuni
+    return (a.url || a.play || a.link || a.store || a.googlePlay || a.amazon || '').trim?.() || '';
+  }
+
+  function linkLabel(url) {
+    const u = (url || '').toLowerCase();
+    if (u.includes('play.google.com')) return 'Scarica su Google Play';
+    if (u.includes('amazon.')) return 'Apri su Amazon';
+    if (u.includes('apps.apple.com')) return 'Apri su App Store';
+    return 'Apri link';
+  }
+
+  function safe(s) { return (s ?? '').toString(); }
+
+  async function tryFetch(path) {
+    const res = await fetch(path, { cache: 'no-store' });
+    if (!res.ok) throw new Error('Fetch failed: ' + path);
+    return res.json();
+  }
+
+  try {
+    // 1) prova path assoluto (consigliato)
+    let data;
+    try {
+      data = await tryFetch('/data/apps.json');
+    } catch (_) {
+      // 2) fallback relativo, utile se stai testando in preview strana
+      data = await tryFetch('../data/apps.json');
+    }
+
+    const apps = normalizeList(data);
+
+    if (!apps.length) {
+      grid.innerHTML = '<p class="section-sub">Nessuna app trovata in <code>/data/apps.json</code>.</p>';
+      return;
+    }
+
+    grid.innerHTML = apps.map(a => {
+      const title = safe(a.title);
+      const desc  = safe(a.desc);
+      const badge = safe(a.badge);
+
       const icon = a.icon && a.icon.trim()
-        ? `<img src="${a.icon}" alt="Icona di ${a.title}" style="width:72px;height:72px;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:#202028" />`
+        ? `<img src="${a.icon}" alt="Icona di ${title}" style="width:72px;height:72px;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:#202028" />`
         : `<div class="placeholder" aria-hidden="true">Icona</div>`;
 
-      const urlBtn = a.url && a.url.trim()
-        ? `<a class="btn" href="${a.url}" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin">Scarica su Google Play</a>`
+      const url = pickLink(a);
+      const btn = url
+        ? `<a class="btn" href="${url}" target="_blank" rel="noopener" referrerpolicy="strict-origin-when-cross-origin">${linkLabel(url)}</a>`
         : `<span class="badge" title="Link non disponibile">In arrivo</span>`;
-
-      const badge = (a.badge && a.badge.trim()) ? a.badge : '';
 
       return `
         <article class="card">
@@ -115,15 +153,15 @@
             ${icon}
             <div>
               <span class="badge">${badge}</span>
-              <h3>${a.title || ''}</h3>
-              <p>${a.desc || ''}</p>
-              <div class="links">${urlBtn}</div>
+              <h3>${title}</h3>
+              <p>${desc}</p>
+              <div class="links">${btn}</div>
             </div>
           </div>
         </article>`;
     }).join('');
   } catch (e) {
-    document.getElementById('apps-grid').innerHTML = '<p class="section-sub">Impossibile caricare le app.</p>';
+    grid.innerHTML = '<p class="section-sub">Impossibile caricare le app. Controlla che esista <code>/data/apps.json</code>.</p>';
   }
 })();
 </script>
